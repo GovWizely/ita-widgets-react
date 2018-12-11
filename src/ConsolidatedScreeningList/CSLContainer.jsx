@@ -12,23 +12,19 @@ class CSLContainer extends Component {
       results: [],
       totalItemsCount: 0,
       submitted: false,
-      offset: 0,
       activePage: 0,
     };
   }
 
-  baseUrl = "https://api.trade.gov/consolidated_screening_list/search?api_key=ShCzzrAkXLpMTsTlhFhUjD29&q=";
+  baseUrl = "https://api.trade.gov/consolidated_screening_list/search?api_key=ShCzzrAkXLpMTsTlhFhUjD29";
   
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
-    fetch(`${this.baseUrl}${this.state.queryString}&offset=${this.state.offset}`)
-    // fetch(`https://api.trade.gov/consolidated_screening_list/search?api_key=ShCzzrAkXLpMTsTlhFhUjD29&q=${this.state.queryString}&offset=${this.state.offset}`)
-    // fetch(`https://api.trade.gov/consolidated_screening_list/search?api_key=${process.env.API_KEY}&q=${this.state.queryString}`)
+  fetchResults = () => {
+    fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage}`)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
@@ -38,10 +34,15 @@ class CSLContainer extends Component {
     .catch(error => console.log(error));
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.fetchResults();
+  }
+
   handlePageChange(pageNumber) {
     console.log(`active page is ${pageNumber}`);
     this.setState({ activePage: pageNumber });
-    /* [TODO] This function should also update the activePage and retrigger the handleSubmit */
+    this.fetchResults();
   }
 
   render() {
