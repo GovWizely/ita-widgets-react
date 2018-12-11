@@ -1,8 +1,13 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+li {
+  display: inline;
+  border: 0.25px solid #3b24ac;
+  padding: 3px 7px;
 }
 
-.App-link {
-  color: #61dafb;
+li > a {
+  text-decoration: none;
 }
-
