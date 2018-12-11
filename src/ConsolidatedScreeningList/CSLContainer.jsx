@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ConsolidatedScreeningResults from './ConsolidatedScreeningResults';
+import CSLResults from './CSLResults';
 require('dotenv').config();
 
-class ConsolidatedScreeningContainer extends Component {
+class CSLContainer extends Component {
   constructor() {
     super()
     this.state = { 
@@ -45,10 +45,10 @@ class ConsolidatedScreeningContainer extends Component {
           />
           <input type="submit" />
         </form>
-        { this.state.submitted ? <ConsolidatedScreeningResults results={this.state.results} total={this.state.totalNumResults}/> : null }
+        { this.state.submitted ? <CSLResults results={this.state.results} total={this.state.totalNumResults}/> : null }
       </div>
     );
   }
 }
 
-export default ConsolidatedScreeningContainer;
+export default CSLContainer;

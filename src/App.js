@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import ConsolidatedScreeningContainer from './ConsolidatedScreeningContainer';
+import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header"></header>
-        <ConsolidatedScreeningContainer />
+        <CSLContainer />
       </div>
     );
   }

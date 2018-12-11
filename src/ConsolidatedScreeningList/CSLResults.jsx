@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ConsolidatedScreeningResults extends Component {
+class CSLResults extends Component {
   constructor() {
     super()
     this.state = {
@@ -17,7 +17,7 @@ class ConsolidatedScreeningResults extends Component {
         <div key={item.id}>
           <p><a href="#" onClick={this.handleClick}> {item.name}</a></p>
           { this.state.toggleDetails ? <p>details component</p> : null}
-          {/* [TODO] need to make each item it's own component so we can control which details menu is toggled */}
+          {/* [TODO] need to make each item its own component so we can control which details menu is toggled */}
         </div>
       )
     })
@@ -29,4 +29,4 @@ class ConsolidatedScreeningResults extends Component {
     );
   }
 }
-export default ConsolidatedScreeningResults;
+export default CSLResults;
