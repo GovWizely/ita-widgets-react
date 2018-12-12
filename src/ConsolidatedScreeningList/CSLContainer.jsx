@@ -62,7 +62,6 @@ class CSLContainer extends Component {
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          {/* <input type="submit" /> */}
           <button type="submit">Search</button>
         </form>
         { this.state.submitted ? 
