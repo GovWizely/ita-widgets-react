@@ -1,3 +1,9 @@
+# Search Widgets for ITA
+
+These are HTML search widgets writted in React, intended to replicate the behavior of these: https://developer.trade.gov/search-widgets.html
+
+---------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
