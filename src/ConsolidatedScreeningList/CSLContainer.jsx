@@ -75,6 +75,8 @@ class CSLContainer extends Component {
                 activePage={this.state.activePage}
                 totalItemsCount={this.state.totalItemsCount}
                 firstPageText="First"
+                prevPageText="<"
+                nextPageText=">"
                 lastPageText="Last"
                 onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
               <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>

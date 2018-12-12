@@ -33,7 +33,13 @@ li > a {
   border: 1px solid #ddd;
   border-top: 0;
   display: block;
-  width: 583px;
+  width: 568px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.resultsList > p:first-child {
+  margin-left: -15px;
 }
 
 .footer {
@@ -120,13 +126,4 @@ p {
 
 p strong {
   color: white; 
-}
-
-.resultsList > p:first-child {
-  margin-left: -15px;
-  margin-top: 10px;
-}
-
-.resultsList {
-  padding-left: 30px;
 }
