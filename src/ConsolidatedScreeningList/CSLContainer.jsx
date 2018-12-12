@@ -45,6 +45,10 @@ class CSLContainer extends Component {
     this.fetchResults();
   }
 
+  clearSubmitted = () => {
+    this.setState({ submitted: false });
+  }
+
   render() {
     return (
       <div>
@@ -64,10 +68,15 @@ class CSLContainer extends Component {
               <CSLResults 
                 results={this.state.results} 
                 total={this.state.totalItemsCount}/>
-              <Pagination 
-                activePage={this.state.activePage}
-                totalItemsCount={this.state.totalItemsCount}
-                onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
+              <div className="footer">
+                <Pagination 
+                  activePage={this.state.activePage}
+                  totalItemsCount={this.state.totalItemsCount}
+                  firstPageText="First"
+                  lastPageText="Last"
+                  onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
+                <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
+              </div>
             </div>
             : null }
       </div>

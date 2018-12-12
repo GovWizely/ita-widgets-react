@@ -21,7 +21,7 @@ class CSLResults extends Component {
 
     return (
       <div className="resultsList">
-        <h3>{this.props.total} results - <a href={moreInfoUrl}>More Information About the Results</a></h3>
+        <p>{this.props.total} results - <a href={moreInfoUrl}>More Information About the Results</a></p>
         {resultsList}
       </div>
     );
