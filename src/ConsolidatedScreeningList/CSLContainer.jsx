@@ -12,7 +12,7 @@ class CSLContainer extends Component {
       results: [],
       totalItemsCount: 0,
       submitted: false,
-      activePage: 0,
+      activePage: 1,
     };
   }
 
@@ -24,14 +24,16 @@ class CSLContainer extends Component {
   }
 
   fetchResults = () => {
-    fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage}`)
+    console.log(`fetching with offset = ${this.state.activePage-1}`)
+    fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
         totalItemsCount: response.total,
         submitted: true,
      }))
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .then(console.log(`active page is ${this.state.activePage}`))
   }
 
   handleSubmit = event => {
@@ -40,7 +42,6 @@ class CSLContainer extends Component {
   }
 
   handlePageChange(pageNumber) {
-    console.log(`active page is ${pageNumber}`);
     this.setState({ activePage: pageNumber });
     this.fetchResults();
   }
@@ -52,8 +53,8 @@ class CSLContainer extends Component {
   render() {
     return (
       <div>
-        <h2>Search the Consolidated Screening List:</h2>
         <form onSubmit={(event) => this.handleSubmit(event)}>
+          <p>Search the Consolidated Screening List:</p>
           <input 
             type="text"
             name="queryString"
@@ -61,24 +62,25 @@ class CSLContainer extends Component {
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          <input type="submit" />
+          {/* <input type="submit" /> */}
+          <button type="submit">Search</button>
         </form>
-          { this.state.submitted ? 
-            <div className="results">
-              <CSLResults 
-                results={this.state.results} 
-                total={this.state.totalItemsCount}/>
-              <div className="footer">
-                <Pagination 
-                  activePage={this.state.activePage}
-                  totalItemsCount={this.state.totalItemsCount}
-                  firstPageText="First"
-                  lastPageText="Last"
-                  onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-                <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
-              </div>
+        { this.state.submitted ? 
+          <div className="results">
+            <CSLResults 
+              results={this.state.results} 
+              total={this.state.totalItemsCount}/>
+            <div className="footer">
+              <Pagination 
+                activePage={this.state.activePage}
+                totalItemsCount={this.state.totalItemsCount}
+                firstPageText="First"
+                lastPageText="Last"
+                onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
+              <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
             </div>
-            : null }
+          </div>
+        : null }
       </div>
     );
   }
