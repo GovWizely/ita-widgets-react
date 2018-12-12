@@ -24,7 +24,6 @@ class CSLContainer extends Component {
   }
 
   fetchResults = () => {
-    console.log(`fetching with offset = ${this.state.activePage-1}`)
     fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
     .then(response => response.json())
     .then(response => this.setState({ 
@@ -33,7 +32,6 @@ class CSLContainer extends Component {
         submitted: true,
      }))
     .catch(error => console.log(error))
-    .then(console.log(`active page is ${this.state.activePage}`))
   }
 
   handleSubmit = event => {
@@ -42,8 +40,7 @@ class CSLContainer extends Component {
   }
 
   handlePageChange(pageNumber) {
-    this.setState({ activePage: pageNumber });
-    this.fetchResults();
+    this.setState({ activePage: pageNumber }, () => this.fetchResults());
   }
 
   clearSubmitted = () => {
