@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
 import CSLContainer from './ConsolidatedScreeningList/CSLWidget';
+// import TradeLeadsContainer from './TradeLeadsWidget/TradeLeadsContainer';
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <CSLContainer />
+        {/* <TradeLeadsContainer /> */}
       </div>
     );
   }
