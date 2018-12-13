@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 // import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
-import CSLContainer from './ConsolidatedScreeningList/CSLWidget';
-// import TradeLeadsContainer from './TradeLeadsWidget/TradeLeadsContainer';
+// import CSLContainer from './ConsolidatedScreeningList/CSLWidget';
+import SearchContainer from './SearchWidget/SearchContainer';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CSLContainer />
-        {/* <TradeLeadsContainer /> */}
+        {/* <CSLContainer /> */}
+        <SearchContainer />
       </div>
     );
   }
