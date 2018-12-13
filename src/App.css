@@ -17,11 +17,20 @@ ul {
 li {
   display: inline;
   padding: 0px 5px;
+  line-height: 26px;
+}
+
+li.active {
+  background-color: #11247D;
 }
 
 li > a {
   text-decoration: none;
   color: white;
+}
+
+li > a:hover {
+  text-decoration: underline;
 }
 
 #clearButton {
