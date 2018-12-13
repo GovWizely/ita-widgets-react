@@ -3,8 +3,9 @@
 These are HTML search widgets written in React, intended to replicate the behavior of these: https://developer.trade.gov/search-widgets.html
 
 List of widgets:
-* [X] ~~*1. Consolidated Screening List*~~  
-        (CSLWidget.jsx contains all 3 components for more convenient sharing.)
+* [X] ~~*1. Consolidated Screening List*~~    
+        ** Run `npm start` to see this one in action  
+        ** Note:`CSLWidget.jsx` contains all 3 components (CSLContainer, CSLResults, and CSL Details) for more convenient sharing later, and is currently the one embedded in `App.js`.  
 * [ ] 2. Trade Leads
 * [ ] 3. Trade Events
 * [ ] 4. Export Assistance Centers
