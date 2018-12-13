@@ -16,11 +16,6 @@ class SearchContainer extends Component {
       activePage: 1,
     };
   }
-
-  baseUrl = "https://api.trade.gov";
-  API_Key = "ShCzzrAkXLpMTsTlhFhUjD29";
-  CSLwidget = "/consolidated_screening_list/search";
-  TradeLeads = "/v1/trade_leads/search";
   
   handleChange(event) {
     const { name, value } = event.target;
@@ -28,8 +23,8 @@ class SearchContainer extends Component {
   }
 
   fetchResults = () => {
-    fetch(`${this.baseUrl}${widgetInfo.ConScreenList.endpoint}?api_key=${this.API_Key}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
-    .then(console.log(`fetching at ${this.baseUrl}${widgetInfo.ConScreenList.endpoint}?api_key=${this.API_Key}&q=${this.state.queryString}&offset=${this.state.activePage-1}`))
+    fetch(`${widgetInfo.baseUrl}${widgetInfo.ConScreenList.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
+    .then(console.log(`fetching at ${widgetInfo.baseUrl}${widgetInfo.ConScreenList.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&offset=${this.state.activePage-1}`))
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
