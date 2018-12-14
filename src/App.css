@@ -104,13 +104,14 @@ td {
 form {
   background-color: #0851ab;
   color: white;
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0;
   padding: 10px 15px;
   width: 570px;
 }
 
 form > input {
+  /* display: inline; */
   width: 254px;
   height: 24px;
   line-height: 24px;
@@ -118,25 +119,44 @@ form > input {
   font-size: 14px;
 }
 
-.dropdown {
+form > button {
+  margin-left: 10px;
+  float: right;
+}
+
+.Dropdown-root {
+  display: inline;
+  /* float: right; */
   background-color: white;
-  /* display: inline; */
-  height: 26px;
   width: 132px;
   margin: 0 0 0 2px;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   color: black;
   /* position: relative; */
 }
 
-.dropdown-menu {
+.Dropdown-control, .Dropdown-arrow-wrapper {
+  display: inline;
   background-color: white;
 }
 
-form > button {
-  margin-left: 10px;
+.Dropdown-placeholder {
+  display: inline-block;
+  background-color: white;
+}
+
+.Dropdown-menu {
+  background-color: white;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: black;
+}
+
+.Dropdown-option {
+  margin: 2px;
 }
 
 p {

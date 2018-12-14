@@ -73,7 +73,6 @@ class SearchContainerWithDropDown extends Component {
             placeholder={this.state.selected || "Select country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
-            className="dropdown"
             />
           <button type="submit">Search</button>
         </form>
