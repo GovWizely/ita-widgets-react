@@ -41,7 +41,7 @@ class SearchDetails extends Component {
     return (
       <div>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <p><a href="#" onClick={this.handleClick}> {this.props.title}</a></p> {/* TODO: this.props.name or this.props.title */}
+          <p><a href="#" title="Expand details table" aria-label="Expand details table" onClick={this.handleClick}> {this.props.title}</a></p> {/* TODO: this.props.name or this.props.title */}
           { this.state.toggleDetails ? TradeLeadsTable : null}
       </div>
     );
