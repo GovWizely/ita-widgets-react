@@ -53,8 +53,15 @@ class SearchContainerWithDropDown extends Component {
     this.setState({ activePage: pageNumber }, () => this.fetchResults());
   }
 
-  clearSubmitted = () => {
-    this.setState({ submitted: false });
+  clearResults = () => {
+    this.setState({ 
+      queryString: '',
+      results: [],
+      totalItemsCount: 0,
+      submitted: false,
+      activePage: 1,
+      selected: {},
+    });
   }
 
   render() {
@@ -91,7 +98,7 @@ class SearchContainerWithDropDown extends Component {
                 nextPageText=">"
                 lastPageText="Last"
                 onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-              <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
+              <button id="clearButton" onClick={this.clearResults}>Clear</button>
             </div>
           </div>
         : null }
