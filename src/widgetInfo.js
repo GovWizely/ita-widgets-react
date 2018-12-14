@@ -31,6 +31,7 @@ export const widgetInfo  = {
   },
 
   countriesList: [
+    {value: ''  , label: 'Select a Country'},
     {value: 'AF', label: 'Afghanistan'},
     {value: 'AX', label: 'Aland Islands'},
     {value: 'AL', label: 'Albania'},
