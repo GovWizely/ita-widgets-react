@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 // import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
 // import CSLContainer from './ConsolidatedScreeningList/CSLWidget';
-import SearchContainer from './SearchWidget/SearchContainer';
+// import SearchContainer from './SearchWidget/SearchContainer';
+import SearchContainerWithDropDown from './SearchWidget/SearchContainerWithDropdown';
 
 
 class App extends Component {
@@ -10,7 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         {/* <CSLContainer /> */}
-        <SearchContainer />
+        {/* <SearchContainer /> */}
+        <SearchContainerWithDropDown />
       </div>
     );
   }
