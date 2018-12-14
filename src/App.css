@@ -49,6 +49,12 @@ li > a:hover {
   margin-left: -15px;
 }
 
+.resultsList > div > p {
+  display: block;
+  padding-bottom: 10px;
+  /* line-height: 20px; */
+}
+
 .footer {
   background-color: #0851ab;
   color: white;
@@ -128,7 +134,6 @@ form > button {
   display: inline;
   /* float: right; */
   background-color: white;
-  width: 132px;
   margin: 0 0 0 2px;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -145,6 +150,7 @@ form > button {
 .Dropdown-placeholder {
   display: inline-block;
   background-color: white;
+  padding: 7px;
 }
 
 .Dropdown-menu {
