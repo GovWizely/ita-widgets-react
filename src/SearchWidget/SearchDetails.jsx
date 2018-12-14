@@ -32,7 +32,7 @@ class SearchDetails extends Component {
       <table>
         <tbody>
           <tr><td>Description</td><td>{this.props.description}</td></tr>
-          <tr><td>URL</td><td>{this.props.url}</td></tr>
+          <tr><td>URL</td><td><a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.url}</a></td></tr>
           <tr><td>Contact</td><td>{this.props.contact}</td></tr>
         </tbody>
       </table>
