@@ -70,7 +70,7 @@ class SearchContainerWithDropDown extends Component {
           />
           <Dropdown 
             options={widgetInfo.countriesList}
-            placeholder="Select country"
+            placeholder={this.state.selected || "Select country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
             className="dropdown"

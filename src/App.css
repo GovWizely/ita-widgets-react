@@ -111,7 +111,7 @@ form {
 }
 
 form > input {
-  width: 300px;
+  width: 254px;
   height: 24px;
   line-height: 24px;
   padding: 1px;
@@ -120,15 +120,19 @@ form > input {
 
 .dropdown {
   background-color: white;
-  display: inline;
+  /* display: inline; */
   height: 26px;
   width: 132px;
   margin: 0 0 0 2px;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
-  /* color: $NOTE; */
+  color: black;
   /* position: relative; */
+}
+
+.dropdown-menu {
+  background-color: white;
 }
 
 form > button {
