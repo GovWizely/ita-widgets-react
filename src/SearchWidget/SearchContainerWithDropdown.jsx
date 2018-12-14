@@ -14,13 +14,14 @@ class SearchContainerWithDropDown extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
-      selected: '',
+      selected: {},
     };
     this._onSelect = this._onSelect.bind(this)
   }
 
   _onSelect(option) {
-    this.setState({selected: option.value});
+    // this.setState({selected: option.value});
+    this.setState({selected: option});
     console.log(`You selected ${option.label}, which has code ${option.value}`);
   }
   
@@ -30,7 +31,7 @@ class SearchContainerWithDropDown extends Component {
   }
 
   fetchResults = () => {
-    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.TradeLeads.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected}&offset=${this.state.activePage-1}`;
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.TradeLeads.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${this.state.activePage-1}`;
 
     console.log(targetUrl);    
     fetch(targetUrl)
@@ -70,7 +71,7 @@ class SearchContainerWithDropDown extends Component {
           />
           <Dropdown 
             options={widgetInfo.countriesList}
-            placeholder={this.state.selected || "Select country"}
+            placeholder={this.state.selected.label || "Select country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
             />
