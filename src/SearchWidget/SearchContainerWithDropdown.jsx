@@ -98,7 +98,7 @@ class SearchContainerWithDropDown extends Component {
                 nextPageText=">"
                 lastPageText="Last"
                 onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-              <button id="clearButton" onClick={this.clearResults}>Clear</button>
+              <button type="reset" id="clearButton" onClick={this.clearResults}>Clear</button>
             </div>
           </div>
         : null }
