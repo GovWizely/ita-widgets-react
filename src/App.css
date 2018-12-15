@@ -44,6 +44,7 @@ li > a:hover {
   width: 600px;
   padding-left: 30px;
   padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .resultsList > p:first-child {
@@ -51,13 +52,19 @@ li > a:hover {
 }
 
 .resultsList > div {
-  margin: 5px;
+  margin: 10px;
+  /* position: relative; */
 }
 
-.resultsList > div > p {
+.resultsList > div > p, a {
   display: float;
+  /* margin-bottom: 10px; */
   padding-bottom: 10px;
   /* line-height: 20px; */
+}
+
+.resultsList > div > p > a {
+  position: relative;
 }
 
 .footer {
