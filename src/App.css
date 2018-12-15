@@ -56,17 +56,6 @@ li > a:hover {
   margin: 10px;
 }
 
-.resultsList > div > p, a {
-  display: float;
-  /* margin-bottom: 10px; */
-  padding-bottom: 10px;
-  /* line-height: 20px; */
-}
-
-.resultsList > div > p > a {
-  position: relative;
-}
-
 .footer {
   background-color: #0851ab;
   color: white;
