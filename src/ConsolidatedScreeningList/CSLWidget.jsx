@@ -25,8 +25,9 @@ class CSLContainer extends Component {
   }
 
   fetchResults = () => {
-    console.log(`Fetching at ${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`);
-    fetch(`${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`)
+    const targetUrl = `${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`;
+    console.log(`Fetching at ${targetUrl}`);
+    fetch(targetUrl)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
@@ -45,8 +46,14 @@ class CSLContainer extends Component {
     this.setState({ activePage: pageNumber }, () => this.fetchResults());
   }
 
-  clearSubmitted = () => {
-    this.setState({ submitted: false });
+  clearResults = () => {
+    this.setState({ 
+      queryString: '',
+      results: [],
+      totalItemsCount: 0,
+      submitted: false,
+      activePage: 1,
+    });
   }
 
   render() {
@@ -77,7 +84,7 @@ class CSLContainer extends Component {
                 nextPageText=">"
                 lastPageText="Last"
                 onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-              <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
+              <button type="reset" id="clearButton" onClick={this.clearResults}>Clear</button>
             </div>
           </div>
         : null }
