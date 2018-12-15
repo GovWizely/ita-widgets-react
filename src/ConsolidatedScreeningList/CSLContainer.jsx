@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CSLResults from './CSLResults';
 import Pagination from "react-js-pagination";
-import '../App.css';
+// import '../App.css';
+import '../App_v2.css';
 require('dotenv').config();
 
 class CSLContainer extends Component {
