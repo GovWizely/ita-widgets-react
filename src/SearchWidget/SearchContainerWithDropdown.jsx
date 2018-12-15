@@ -20,7 +20,6 @@ class SearchContainerWithDropDown extends Component {
   }
 
   _onSelect(option) {
-    // this.setState({selected: option.value});
     this.setState({selected: option});
     console.log(`You selected ${option.label}, which has code ${option.value}`);
   }
@@ -31,9 +30,9 @@ class SearchContainerWithDropDown extends Component {
   }
 
   fetchResults = () => {
-    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.TradeLeads.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${this.state.activePage-1}`;
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.TradeLeads.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${(this.state.activePage-1)*10}`;
 
-    console.log(targetUrl);    
+    console.log(`Fetching from: ${targetUrl}`);    
     fetch(targetUrl)
     .then(response => response.json())
     .then(response => this.setState({ 
