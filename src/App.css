@@ -52,8 +52,8 @@ li > a:hover {
 }
 
 .resultsList > div {
+  display: inline-block;
   margin: 10px;
-  /* position: relative; */
 }
 
 .resultsList > div > p, a {
