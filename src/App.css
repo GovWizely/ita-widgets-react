@@ -36,11 +36,12 @@ li > a:hover {
   float: right;
   margin-top: 8px;
 }
+
 .resultsList {
   border: 1px solid #ddd;
   border-top: 0;
   display: block;
-  width: 568px;
+  width: 600px;
   padding-left: 30px;
   padding-top: 10px;
 }
@@ -49,8 +50,12 @@ li > a:hover {
   margin-left: -15px;
 }
 
+.resultsList > div {
+  margin: 5px;
+}
+
 .resultsList > div > p {
-  display: block;
+  display: float;
   padding-bottom: 10px;
   /* line-height: 20px; */
 }
@@ -61,7 +66,7 @@ li > a:hover {
   height: 40px;
   line-height: 26px;
   padding: 0 15px 0 10px;
-  width: 575px;
+  width: 607px;
 }
 
 table {
@@ -113,7 +118,7 @@ form {
   /* display: inline-block; */
   margin: 0;
   padding: 10px 15px;
-  width: 570px;
+  width: 602px;
 }
 
 form > input {
@@ -127,7 +132,10 @@ form > input {
 
 form > button {
   margin-left: 10px;
+  margin-top: 5px;
   float: right;
+  position: absolute;
+
 }
 
 .Dropdown-root {
