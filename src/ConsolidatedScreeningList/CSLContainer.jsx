@@ -24,7 +24,8 @@ class CSLContainer extends Component {
   }
 
   fetchResults = () => {
-    fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
+    console.log(`Fetching at ${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`);
+    fetch(`${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,

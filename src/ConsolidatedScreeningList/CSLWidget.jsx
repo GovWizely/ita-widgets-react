@@ -1,4 +1,4 @@
-/* This file contains all the component together in one place */
+/* This file contains all the components together in one place */
 
 import React, { Component } from 'react';
 import Pagination from "react-js-pagination";
@@ -18,14 +18,15 @@ class CSLContainer extends Component {
   }
 
   baseUrl = "https://api.trade.gov/consolidated_screening_list/search?api_key=ShCzzrAkXLpMTsTlhFhUjD29";
-  
+
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
 
   fetchResults = () => {
-    fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
+    console.log(`Fetching at ${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`);
+    fetch(`${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
