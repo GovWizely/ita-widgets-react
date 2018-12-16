@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import CSLResults from './CSLResults';
 import Pagination from "react-js-pagination";
+import { IoMdSearch } from 'react-icons/io'
 import '../App.css';
-require('dotenv').config();
+import { widgetInfo } from '../widgetInfo';
+
 
 class CSLContainer extends Component {
   constructor() {
@@ -15,8 +17,6 @@ class CSLContainer extends Component {
       activePage: 1,
     };
   }
-
-  baseUrl = "https://api.trade.gov/consolidated_screening_list/search?api_key=ShCzzrAkXLpMTsTlhFhUjD29";
   
   handleChange(event) {
     const { name, value } = event.target;
@@ -24,7 +24,10 @@ class CSLContainer extends Component {
   }
 
   fetchResults = () => {
-    fetch(`${this.baseUrl}&q=${this.state.queryString}&offset=${this.state.activePage-1}`)
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.ConScreenList.endpoint}?api_key=${widgetInfo.API_KEY}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`;
+    console.log(`Fetching from: ${targetUrl}`);  
+
+    fetch(targetUrl)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
@@ -44,14 +47,20 @@ class CSLContainer extends Component {
   }
 
   clearSubmitted = () => {
-    this.setState({ submitted: false });
+    this.setState({
+      queryString: '',
+      results: [],
+      totalItemsCount: 0, 
+      submitted: false,
+      activePage: 1,
+    });
   }
 
   render() {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>Search the Consolidated Screening List:</p>
+          <p>Search {widgetInfo.ConScreenList.title}:</p>
           <input 
             type="text"
             name="queryString"
@@ -59,7 +68,7 @@ class CSLContainer extends Component {
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          <button type="submit">Search</button>
+          <button type="submit"><IoMdSearch /></button>
         </form>
         { this.state.submitted ? 
           <div className="results">
@@ -75,7 +84,7 @@ class CSLContainer extends Component {
                 nextPageText=">"
                 lastPageText="Last"
                 onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-              <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
+              <button type="reset" onClick={this.clearResults}>Reset</button>
             </div>
           </div>
         : null }
