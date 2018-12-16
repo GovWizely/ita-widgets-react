@@ -1,3 +1,6 @@
+:root {
+  --theme-color: #3b75cd;
+}
 .App {
   /* text-align: center; */
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -32,9 +35,13 @@ li > a:hover {
   text-decoration: underline;
 }
 
-#clearButton {
+button[type=reset] {
   float: right;
-  margin-top: 8px;
+  margin-top: 6px;
+  margin-right: 20px;
+  background-color: #c3d5f0;
+  border: none;
+  height: 24px;
 }
 
 .resultsList {
@@ -55,9 +62,13 @@ li > a:hover {
   display: inline-block;
   margin: 10px;
 }
+/* .resultsList > div:not(:last-child) {
+  border-bottom: 1px solid #c3d5f0;
+} */
 
 .footer {
-  background-color: #0851ab;
+  /* background-color: #0851ab; */
+  background-color: var(--theme-color);
   color: white;
   height: 40px;
   line-height: 26px;
@@ -109,12 +120,14 @@ td {
 }
 
 form {
-  background-color: #0851ab;
+  /* background-color: #0851ab; */
+  background-color: var(--theme-color);
   color: white;
   /* display: inline-block; */
   margin: 0;
   padding: 10px 15px;
   width: 602px;
+  text-align: center;
 }
 
 form > input {
@@ -124,14 +137,24 @@ form > input {
   line-height: 24px;
   padding: 1px;
   font-size: 14px;
+  border: none;
+  margin-left: -30px;
 }
 
-form > button {
+/* form > button {
   margin-left: 10px;
   margin-top: 5px;
   float: right;
   position: absolute;
+} */
 
+button[type=submit] {
+  position: absolute;
+  float: right;
+  background-color: #c3d5f0;
+  border: none;
+  height: 26px;
+  width: 26px;
 }
 
 .Dropdown-root {
