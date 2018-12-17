@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
+// import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
 // import SearchContainer from './SearchWidget/SearchContainer';
-// import SearchContainerWithDropDown from './SearchWidget/SearchContainerWithDropdown';
+import SearchContainerWithDropDown from './SearchWidget/SearchContainerWithDropdown';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CSLContainer />
+        {/* <CSLContainer /> */}
         {/* <SearchContainer /> */}
-        {/* <SearchContainerWithDropDown /> */}
+        <SearchContainerWithDropDown endpoint="trade_leads"/>
+        {/* possible endpoints: "consolidated_screening_list" or "trade_leads" */}
       </div>
     );
   }

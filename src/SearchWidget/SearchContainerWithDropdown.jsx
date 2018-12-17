@@ -75,12 +75,14 @@ class SearchContainerWithDropDown extends Component {
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          <Dropdown 
+          {(this.props.endpoint === "trade_leads") ? (
+            <Dropdown 
             options={widgetInfo.countriesList}
             placeholder={this.state.selected.label || "Select country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
             />
+          ) : null }
           <button type="submit">Search</button>
         </form>
         { this.state.submitted ? 
