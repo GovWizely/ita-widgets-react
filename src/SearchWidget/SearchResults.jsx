@@ -5,27 +5,26 @@ import { widgetInfo } from '../widgetInfo';
 class SearchResults extends Component {
 
   render() {
-    const CSL = false;
-
-    const resultsList = this.props.results.map(item => {
-      return (
-        <SearchDetails 
+    const resultsList = (
+      this.props.results.map(item => {
+        return (<SearchDetails
           key={item.id}
-          // name={item.name} // for CSL
-          // remarks={item.remarks} // for CSL
-          // source={item.source} // for CSL
-          // altNames={item.alt_names} // for CSL
+          name={item.name}
+          remarks={item.remarks}
+          source={item.source}
+          altNames={item.alt_names}
           title={item.title}
           description={item.description}
           url={item.url}
           contact={item.contact}
-        />
-      )
-    })
+          endpoint={this.props.endpoint}
+          />) 
+      })
+    )
 
     return (
       <div className="resultsList">
-        <p>{this.props.total} results {CSL ? <a href={widgetInfo.ConScreenList.moreInfo}>More Information About the Results</a> : null}</p>
+        <p>{this.props.total} results {(this.props.endpoint === "consolidated_screening_list") ? <a href={widgetInfo.consolidated_screening_list.moreInfo}>More Information About the Results</a> : null}</p>
         {resultsList}
       </div>
     );
