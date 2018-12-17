@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import CSLContainer from './ConsolidatedScreeningList/CSLContainer';
 // import SearchContainer from './SearchWidget/SearchContainer';
-import SearchContainerWithDropDown from './SearchWidget/SearchContainerWithDropdown';
+import SearchContainerWithDropDown from './SearchWidget/SearchContainer';
 
 
 class App extends Component {

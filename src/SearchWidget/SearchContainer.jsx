@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
+import Dropdown from 'react-dropdown';
+import { IoMdSearch } from 'react-icons/io'
 import '../App.css';
 import { widgetInfo } from '../widgetInfo';
 
-class SearchContainer extends Component {
+class SearchContainerWithDropDown extends Component {
   constructor() {
     super()
     this.state = { 
@@ -13,7 +15,14 @@ class SearchContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
+      selected: {},
     };
+    this._onSelect = this._onSelect.bind(this)
+  }
+
+  _onSelect(option) {
+    this.setState({selected: option});
+    console.log(`You selected ${option.label}, which has code ${option.value}`);
   }
   
   handleChange(event) {
@@ -22,8 +31,10 @@ class SearchContainer extends Component {
   }
 
   fetchResults = () => {
-    // console.log('Fetching from: ' + widgetInfo.baseUrl + widgetInfo.ConScreenList.endpoint + '?api_key=' + widgetInfo.API_KEY + "&q=" + this.state.queryString + '&offset=' + this.state.activePage-1);    
-    fetch(widgetInfo.baseUrl + widgetInfo.ConScreenList.endpoint + '?api_key=' + widgetInfo.API_KEY + "&q=" + this.state.queryString + '&offset=' + this.state.activePage-1)
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.TradeLeads.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${(this.state.activePage-1)*10}`;
+
+    console.log(`Fetching from: ${targetUrl}`);    
+    fetch(targetUrl)
     .then(response => response.json())
     .then(response => this.setState({ 
         results: response.results,
@@ -42,15 +53,22 @@ class SearchContainer extends Component {
     this.setState({ activePage: pageNumber }, () => this.fetchResults());
   }
 
-  clearSubmitted = () => {
-    this.setState({ submitted: false });
+  clearResults = () => {
+    this.setState({ 
+      queryString: '',
+      results: [],
+      totalItemsCount: 0,
+      submitted: false,
+      activePage: 1,
+      selected: {},
+    });
   }
 
   render() {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>Search {widgetInfo.ConScreenList.title}:</p>
+          <p>Search {widgetInfo.TradeLeads.title}:</p>
           <input 
             type="text"
             name="queryString"
@@ -58,7 +76,15 @@ class SearchContainer extends Component {
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          <button type="submit">Search</button>
+          {(this.props.endpoint === "trade_leads") ? (
+            <Dropdown 
+            options={widgetInfo.countriesList}
+            placeholder={this.state.selected.label || "Select country"}
+            onChange={this._onSelect}
+            value={this.state.selected.value}
+            />
+          ) : null }
+          <button type="submit"><IoMdSearch /></button>
         </form>
         { this.state.submitted ? 
           <div className="results">
@@ -74,7 +100,7 @@ class SearchContainer extends Component {
                 nextPageText=">"
                 lastPageText="Last"
                 onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-              <button id="clearButton" onClick={this.clearSubmitted}>Clear</button>
+              <button type="reset" id="clearButton" onClick={this.clearResults}>Clear</button>
             </div>
           </div>
         : null }
@@ -83,4 +109,4 @@ class SearchContainer extends Component {
   }
 }
 
-export default SearchContainer;
+export default SearchContainerWithDropDown;
