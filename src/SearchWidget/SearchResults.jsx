@@ -5,22 +5,29 @@ import { widgetInfo } from '../widgetInfo';
 class SearchResults extends Component {
 
   render() {
-    const resultsList = (
-      this.props.results.map(item => {
-        return (<SearchDetails
-          key={item.id}
-          name={item.name}
-          remarks={item.remarks}
-          source={item.source}
-          altNames={item.alt_names}
-          title={item.title}
-          description={item.description}
-          url={item.url}
-          contact={item.contact}
-          endpoint={this.props.endpoint}
-          />) 
-      })
-    )
+    const resultsList = this.props.results.map(item => {
+      switch (this.props.endpoint) {
+        case "consolidated_screening_list":
+          return (<SearchDetails
+            key={item.id}
+            name={item.name}
+            remarks={item.remarks}
+            source={item.source}
+            altNames={item.alt_names}
+            endpoint={this.props.endpoint}
+            />)
+        case "trade_leads":
+          return (<SearchDetails
+            key={item.id}
+            title={item.title}
+            description={item.description}
+            url={item.url}
+            contact={item.contact}
+            endpoint={this.props.endpoint}
+            />)
+        default: return null
+      }
+    })
 
     return (
       <div className="resultsList">
