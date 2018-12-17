@@ -7,10 +7,11 @@ class App extends Component {
   render() {
 
     const endpoint="trade_leads" /* possible endpoints: "consolidated_screening_list" or "trade_leads" */
+    const API_KEY="ShCzzrAkXLpMTsTlhFhUjD29"
 
     return (
       <div className="App">
-        <SearchContainer endpoint={endpoint} />
+        <SearchContainer endpoint={endpoint} API_KEY={API_KEY} />
       </div>
     );
   }

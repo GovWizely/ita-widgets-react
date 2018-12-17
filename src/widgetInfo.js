@@ -2,8 +2,6 @@ export const widgetInfo  = {
 
   baseUrl: "https://api.trade.gov",
 
-  API_KEY: "ShCzzrAkXLpMTsTlhFhUjD29",
-
   "consolidated_screening_list": {
     title: "the Consolidated Screening List",
     endpoint: "/consolidated_screening_list/search",
