@@ -62,6 +62,7 @@ button[type=reset] {
   display: inline-block;
   margin: 10px;
 }
+
 /* .resultsList > div:not(:last-child) {
   border-bottom: 1px solid #c3d5f0;
 } */
@@ -84,7 +85,7 @@ table {
   display: table;
   empty-cells: show;
   list-style-type: none;
-  margin: 5px 0 15px;
+  margin: 15px 0 15px;
   overflow-x: visible;
   overflow-y: visible;
   text-align: left;
