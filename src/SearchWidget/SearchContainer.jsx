@@ -4,9 +4,9 @@ import Pagination from "react-js-pagination";
 import Dropdown from 'react-dropdown';
 import { IoMdSearch } from 'react-icons/io'
 import '../App.css';
-import { widgetInfo } from '../widgetInfo';
+import widgetInfo from '../widgetInfo';
 
-class SearchContainerWithDropDown extends Component {
+class SearchContainer extends Component {
   constructor() {
     super()
     this.state = { 
@@ -20,6 +20,8 @@ class SearchContainerWithDropDown extends Component {
     this._onSelect = this._onSelect.bind(this)
   }
 
+  
+
   _onSelect(option) {
     this.setState({selected: option});
     console.log(`You selected ${option.label}, which has code ${option.value}`);
@@ -31,7 +33,7 @@ class SearchContainerWithDropDown extends Component {
   }
 
   fetchResults = () => {
-    const targetUrl = `${widgetInfo.baseUrl+widgetInfo.TradeLeads.endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${(this.state.activePage-1)*10}`;
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo[this.props.endpoint].endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${(this.state.activePage-1)*10}`;
 
     console.log(`Fetching from: ${targetUrl}`);    
     fetch(targetUrl)
@@ -68,7 +70,7 @@ class SearchContainerWithDropDown extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>Search {widgetInfo.TradeLeads.title}:</p>
+          <p>Search {widgetInfo[this.props.endpoint].title}:</p>
           <input 
             type="text"
             name="queryString"
@@ -109,4 +111,4 @@ class SearchContainerWithDropDown extends Component {
   }
 }
 
-export default SearchContainerWithDropDown;
+export default SearchContainer;
