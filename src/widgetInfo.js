@@ -4,28 +4,28 @@ export const widgetInfo  = {
 
   API_KEY: "ShCzzrAkXLpMTsTlhFhUjD29",
 
-  ConScreenList: {
+  "consolidated_screening_list": {
     title: "the Consolidated Screening List",
     endpoint: "/consolidated_screening_list/search",
     moreInfo: "http://export.gov/ecr/eg_main_023148.asp",
   },
 
-  TradeLeads: {
+  "trade_leads": {
     title: "Trade Leads",
     endpoint: "/v1/trade_leads/search",
   },
 
-  TradeEvents: {
+  "trade_events": {
     title: "Trade Events",
     endpoint: "/v1/trade_events/search",
   },
 
-  ExportAsstCenters: {
+  "export_assistance centers": {
     title: "Export Assistance Centers",
     endpoint: "/ita_zipcode_to_post/search",
   },
 
-  IntlOfficeLoc: {
+  "international_office_locations": {
     title: "International Office Locations",
     endpoint: "/ita_office_locations/search",
   },
@@ -279,3 +279,5 @@ export const widgetInfo  = {
     {value: 'ZW', label: 'Zimbabwe'},
   ]
 }
+
+export default widgetInfo;
