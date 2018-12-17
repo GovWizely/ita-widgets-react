@@ -5,10 +5,12 @@ import SearchContainer from './SearchWidget/SearchContainer';
 
 class App extends Component {
   render() {
+
+    const endpoint="trade_leads" /* possible endpoints: "consolidated_screening_list" or "trade_leads" */
+
     return (
       <div className="App">
-        <SearchContainer endpoint="trade_leads"/>
-        {/* possible endpoints: "consolidated_screening_list" or "trade_leads" */}
+        <SearchContainer endpoint={endpoint} />
       </div>
     );
   }
