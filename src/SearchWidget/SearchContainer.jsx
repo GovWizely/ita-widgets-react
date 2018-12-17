@@ -20,8 +20,6 @@ class SearchContainer extends Component {
     this._onSelect = this._onSelect.bind(this)
   }
 
-  
-
   _onSelect(option) {
     this.setState({selected: option});
     console.log(`You selected ${option.label}, which has code ${option.value}`);
@@ -41,6 +39,7 @@ class SearchContainer extends Component {
       default: return null
     }
   }
+  
   fetchResults = () => {
     const targetUrl = `${widgetInfo.baseUrl+widgetInfo[this.props.endpoint].endpoint}?api_key=${this.props.API_KEY}${this.queryParams()}&offset=${(this.state.activePage-1)*10}`;
 
