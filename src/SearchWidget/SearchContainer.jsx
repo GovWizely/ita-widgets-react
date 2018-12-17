@@ -32,8 +32,17 @@ class SearchContainer extends Component {
     this.setState({ [name]: value });
   }
 
+  queryParams() {
+    switch (this.props.endpoint) {
+      case "consolidated_screening_list":
+        return `&name=${this.state.queryString}&fuzzy_name=true`;
+      case "trade_leads":
+        return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
+      default: return null
+    }
+  }
   fetchResults = () => {
-    const targetUrl = `${widgetInfo.baseUrl+widgetInfo[this.props.endpoint].endpoint}?api_key=${widgetInfo.API_KEY}&q=${this.state.queryString}&countries=${this.state.selected.value}&offset=${(this.state.activePage-1)*10}`;
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo[this.props.endpoint].endpoint}?api_key=${this.props.API_KEY}${this.queryParams()}&offset=${(this.state.activePage-1)*10}`;
 
     console.log(`Fetching from: ${targetUrl}`);    
     fetch(targetUrl)
@@ -92,7 +101,9 @@ class SearchContainer extends Component {
           <div className="results">
             <SearchResults 
               results={this.state.results} 
-              total={this.state.totalItemsCount}/>
+              total={this.state.totalItemsCount}
+              endpoint={this.props.endpoint}
+              />
             <div className="footer">
               <Pagination 
                 activePage={this.state.activePage}
