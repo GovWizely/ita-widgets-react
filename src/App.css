@@ -121,7 +121,8 @@ td {
 }
 
 form {
-  /* background-color: #0851ab; */
+  display: inline-block;
+  text-align: center;
   background-color: var(--theme-color);
   color: white;
   /* display: inline-block; */
@@ -132,65 +133,84 @@ form {
 }
 
 form > input {
-  /* display: inline; */
   display: inline-block;
-  top: 37px;
-  width: 254px;
-  height: 28px;
+  width: 33%;
+  height: 36px;
   line-height: 24px;
   padding-left: 10px;
   font-size: 14px;
   border: none;
-  margin-left: -35px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
 }
 
 button[type=submit] {
-  position: absolute;
-  float: right;
+  display: inline-block;
+  /* margin: 0 auto; */
   background-color: #c3d5f0;
   border: none;
-  height: 30px;
-  width: 26px;
+  height: 38px;
+  width: 38px;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
 }
 
-.Dropdown-root {
+.Dropdown {
   display: inline-block;
-  height: 28px;
+  /* margin: 0 auto; */
+  border: none;
+  width: 33%;
+  height: 26px;
+  border-radius: 0;
+  color: black;
+}
+
+.Dropdown > div {
+  border: none;
+  border-radius: 0;
+  border-left: 1px dotted var(--theme-color);
+}
+
+/* .Dropdown-root__indicator {
+  border: none;
+} */
+
+/* .Dropdown-root {
+  display: inline-block;
+  height: 26px;
   background-color: white;
-  /* margin: 0 0 0 2px; */
+  margin: 0 0 0 2px;
   border-left: 1px solid #c3d5f0;
+  border: none;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 16px;
   color: black;
-}
+  width: 100px;
+}  */
 
-.Dropdown-control, .Dropdown-arrow-wrapper {
+/* .Dropdown-control, .Dropdown-arrow-wrapper {
   display: inline;
   background-color: white;
-}
+} */
 
-.Dropdown-placeholder {
+/* .Dropdown-placeholder {
   display: inline-block;
   background-color: white;
   padding: 7px;
-}
+} */
 
-.Dropdown-menu {
+/* .Dropdown-menu {
   background-color: white;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 16px;
   color: black;
-}
+} */
 
-.Dropdown-option {
+/* .Dropdown-option {
   margin: 2px;
-}
+}  */
 
 p {
   /* color: white; */
