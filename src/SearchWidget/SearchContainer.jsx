@@ -38,7 +38,7 @@ class SearchContainer extends Component {
         return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
       case "trade_events":
         return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
-      case "export_assistance centers":
+      case "export_assistance_centers":
         return `&zipcodes=${this.state.queryString}`;
       case "international_office_locations":
         return `&city=${this.state.queryString}&countries=${this.state.selected.value}`;
