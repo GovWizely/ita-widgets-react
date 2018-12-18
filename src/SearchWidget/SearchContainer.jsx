@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import CSLResults from './CSLResults';
+import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
-// import '../App.css';
-import '../App_v2.css';
-require('dotenv').config();
+import Dropdown from 'react-dropdown';
+import { IoMdSearch } from 'react-icons/io'
+import '../App.css';
+import widgetInfo from '../widgetInfo';
 
-class CSLContainer extends Component {
+class SearchContainer extends Component {
   constructor() {
     super()
     this.state = { 
@@ -14,19 +15,35 @@ class CSLContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
+      selected: {},
     };
+    this._onSelect = this._onSelect.bind(this)
   }
 
-  baseUrl = "https://api.trade.gov/consolidated_screening_list/search?api_key=ShCzzrAkXLpMTsTlhFhUjD29";
+  _onSelect(option) {
+    this.setState({selected: option});
+    console.log(`You selected ${option.label}, which has code ${option.value}`);
+  }
   
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
 
+  queryParams() {
+    switch (this.props.endpoint) {
+      case "consolidated_screening_list":
+        return `&name=${this.state.queryString}&fuzzy_name=true`;
+      case "trade_leads":
+        return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
+      default: return null
+    }
+  }
+  
   fetchResults = () => {
-    const targetUrl = `${this.baseUrl}&name=${this.state.queryString}&fuzzy_name=true&offset=${(this.state.activePage-1)*10}`;
-    console.log(`Fetching at ${targetUrl}`);
+    const targetUrl = `${widgetInfo.baseUrl+widgetInfo[this.props.endpoint].endpoint}?api_key=${this.props.API_KEY}${this.queryParams()}&offset=${(this.state.activePage-1)*10}`;
+
+    console.log(`Fetching from: ${targetUrl}`);    
     fetch(targetUrl)
     .then(response => response.json())
     .then(response => this.setState({ 
@@ -53,6 +70,7 @@ class CSLContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
+      selected: {},
     });
   }
 
@@ -60,7 +78,7 @@ class CSLContainer extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>Search the Consolidated Screening List:</p>
+          <p>Search {widgetInfo[this.props.endpoint].title}:</p>
           <input 
             type="text"
             name="queryString"
@@ -68,13 +86,23 @@ class CSLContainer extends Component {
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          <button type="submit">Search</button>
+          {(this.props.endpoint === "trade_leads") ? (
+            <Dropdown 
+            options={widgetInfo.countriesList}
+            placeholder={this.state.selected.label || "Select country"}
+            onChange={this._onSelect}
+            value={this.state.selected.value}
+            />
+          ) : null }
+          <button type="submit"><IoMdSearch /></button>
         </form>
         { this.state.submitted ? 
           <div className="results">
-            <CSLResults 
+            <SearchResults 
               results={this.state.results} 
-              total={this.state.totalItemsCount}/>
+              total={this.state.totalItemsCount}
+              endpoint={this.props.endpoint}
+              />
             <div className="footer">
               <Pagination 
                 activePage={this.state.activePage}
@@ -93,4 +121,4 @@ class CSLContainer extends Component {
   }
 }
 
-export default CSLContainer;
+export default SearchContainer;

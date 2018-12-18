@@ -1,3 +1,6 @@
+:root {
+  --theme-color: #3b75cd;
+}
 .App {
   /* text-align: center; */
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -11,7 +14,6 @@
 ul {
   float: left;
   margin-top: 5px;
-  /* [TODO] try adjusting the padding in here */
 }
 
 li {
@@ -33,31 +35,46 @@ li > a:hover {
   text-decoration: underline;
 }
 
-#clearButton {
-  /* display: inline-block; */
+button[type=reset] {
   float: right;
-  margin-top: 8px;
+  margin-top: 6px;
+  margin-right: 20px;
+  background-color: #c3d5f0;
+  border: none;
+  height: 24px;
 }
+
 .resultsList {
   border: 1px solid #ddd;
   border-top: 0;
   display: block;
-  width: 568px;
+  width: 600px;
   padding-left: 30px;
   padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .resultsList > p:first-child {
   margin-left: -15px;
 }
 
+.resultsList > div {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* .resultsList > div:not(:last-child) {
+  border-bottom: 1px solid #c3d5f0;
+} */
+
 .footer {
-  background-color: #0851ab;
+  /* background-color: #0851ab; */
+  background-color: var(--theme-color);
   color: white;
   height: 40px;
   line-height: 26px;
   padding: 0 15px 0 10px;
-  width: 575px;
+  width: 607px;
 }
 
 table {
@@ -68,7 +85,7 @@ table {
   display: table;
   empty-cells: show;
   list-style-type: none;
-  margin: 5px 0 15px;
+  margin: 15px 0 15px;
   overflow-x: visible;
   overflow-y: visible;
   text-align: left;
@@ -104,24 +121,75 @@ td {
 }
 
 form {
-  background-color: #0851ab;
+  /* background-color: #0851ab; */
+  background-color: var(--theme-color);
   color: white;
-  display: block;
+  /* display: inline-block; */
   margin: 0;
   padding: 10px 15px;
-  width: 570px;
+  width: 602px;
+  text-align: center;
 }
 
 form > input {
-  width: 388px;
-  height: 24px;
+  /* display: inline; */
+  display: inline-block;
+  top: 37px;
+  width: 254px;
+  height: 28px;
   line-height: 24px;
-  padding: 1px;
+  padding-left: 10px;
   font-size: 14px;
+  border: none;
+  margin-left: -35px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
-form > button {
-  margin-left: 10px;
+button[type=submit] {
+  position: absolute;
+  float: right;
+  background-color: #c3d5f0;
+  border: none;
+  height: 30px;
+  width: 26px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.Dropdown-root {
+  display: inline-block;
+  height: 28px;
+  background-color: white;
+  /* margin: 0 0 0 2px; */
+  border-left: 1px solid #c3d5f0;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: black;
+}
+
+.Dropdown-control, .Dropdown-arrow-wrapper {
+  display: inline;
+  background-color: white;
+}
+
+.Dropdown-placeholder {
+  display: inline-block;
+  background-color: white;
+  padding: 7px;
+}
+
+.Dropdown-menu {
+  background-color: white;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: black;
+}
+
+.Dropdown-option {
+  margin: 2px;
 }
 
 p {
