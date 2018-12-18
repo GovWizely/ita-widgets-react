@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
-import Dropdown from 'react-dropdown';
+// import Dropdown from 'react-dropdown';
+import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
 import '../App.css';
 import widgetInfo from '../widgetInfo';
@@ -87,11 +88,12 @@ class SearchContainer extends Component {
             onChange={(event) => this.handleChange(event)}
           />
           {(this.props.endpoint === "trade_leads") ? (
-            <Dropdown 
+            <Select
             options={widgetInfo.countriesList}
             placeholder={this.state.selected.label || "Select country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
+            className="Dropdown"
             />
           ) : null }
           <button type="submit"><IoMdSearch /></button>
