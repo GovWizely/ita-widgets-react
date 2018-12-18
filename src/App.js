@@ -6,7 +6,9 @@ import SearchContainer from './SearchWidget/SearchContainer';
 class App extends Component {
   render() {
 
-    const endpoint="consolidated_screening_list" /* possible endpoints: "consolidated_screening_list" or "trade_leads" */
+    const endpoint="trade_leads" /* possible endpoints: "consolidated_screening_list" or "trade_leads" */
+    // const endpoint="consolidated_screening_list"
+
     const API_KEY="ShCzzrAkXLpMTsTlhFhUjD29"
 
     return (
