@@ -15,7 +15,7 @@ class SearchContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
-      selected: {},
+      selected: {value: ''},
     };
     this._onSelect = this._onSelect.bind(this)
   }
