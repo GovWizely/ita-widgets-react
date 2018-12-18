@@ -4,12 +4,12 @@ These are HTML search widgets written in React, intended to replicate the behavi
 
 List of widgets:
 * [X] ~~*1. Consolidated Screening List*~~    
-        ** Run `npm start` to see this one in action  
-        ** Note:`CSLWidget.jsx` contains all 3 components (CSLContainer, CSLResults, and CSL Details) for more convenient sharing later, and is currently the one embedded in `App.js`.  
-* [ ] 2. Trade Leads
+* [X] ~~*2. Trade Leads*~~  But, the dropdown menu looks and acts awkwardly still
 * [ ] 3. Trade Events
 * [ ] 4. Export Assistance Centers
 * [ ] 5. International Office Locations
+
+To start, confirm or change the desired endpoint in `src/App.js`, then run `npm start`.
 
 ---------------------------
 
