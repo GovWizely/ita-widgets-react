@@ -101,7 +101,7 @@ class SearchContainer extends Component {
             className="Dropdown"
             />
           ) : null }
-          <button type="submit"><IoMdSearch /></button>
+          <button type="submit"><IoMdSearch size="2em"/></button>
         </form>
         { this.state.submitted ? 
           <div className="results">

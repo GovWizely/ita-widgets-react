@@ -136,7 +136,7 @@ form {
 form > input {
   display: inline-block;
   position: relative;
-  top: -1px;
+  top: 0px;
   width: 33%;
   height: 36px;
   line-height: 24px;
@@ -151,7 +151,7 @@ form > input {
 button[type=submit] {
   display: inline-block;
   position: relative;
-  top: 0px;
+  top: 6.5px;
   background-color: #c3d5f0;
   border: none;
   height: 38px;
