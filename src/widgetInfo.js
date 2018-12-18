@@ -21,11 +21,13 @@ export const widgetInfo  = {
   "export_assistance centers": {
     title: "Export Assistance Centers",
     endpoint: "/ita_zipcode_to_post/search",
+    placeholder: "Enter ZIP code",
   },
 
   "international_office_locations": {
     title: "International Office Locations",
     endpoint: "/ita_office_locations/search",
+    placeholder: "Enter city name",
   },
 
   countriesList: [
