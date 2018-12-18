@@ -49,7 +49,7 @@ class SearchDetails extends Component {
                 <tr><td>Description</td><td>{this.props.description}</td></tr>
                 <tr><td>Start Date</td><td>{this.props.start_date}</td></tr>
                 <tr><td>End Date</td><td>{this.props.end_date}</td></tr>
-                <tr><td>Venues</td><td>{this.props.venues}</td></tr>
+                <tr><td>Venues</td><td>{this.props.venues[0].location}</td></tr>
                 <tr><td>URL</td><td><a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.url}</a></td></tr>
                 <tr><td>Source</td><td>{this.props.source}</td></tr>
               </tbody>
