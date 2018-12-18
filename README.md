@@ -4,7 +4,7 @@ These are HTML search widgets written in React, intended to replicate the behavi
 
 List of widgets:
 * [X] ~~*1. Consolidated Screening List*~~    
-* [X] ~~*2. Trade Leads*~~  But, the dropdown menu looks and acts awkwardly still
+* [X] ~~*2. Trade Leads*~~  New dropdown menu, but the positioning is still off...
 * [ ] 3. Trade Events
 * [ ] 4. Export Assistance Centers
 * [ ] 5. International Office Locations
