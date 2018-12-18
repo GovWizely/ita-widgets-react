@@ -85,7 +85,11 @@ class SearchDetails extends Component {
     return (
       <div>
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <p><a href="#" title="Expand details table" aria-label="Expand details table" onClick={this.handleClick}> {this.props[Object.keys(this.props)[0]]}</a></p>
+          <p><a href="#" title="Expand details table" aria-label="Expand details table" onClick={this.handleClick}>
+          {(this.props.endpoint==="export_assistance_centers") ? 
+            `${this.props.zip_code} - ${this.props.office_name}` : 
+            `${this.props[Object.keys(this.props)[0]]}` 
+          }</a></p>
           
           { this.state.toggleDetails ? detailsTable() : null}
       </div>

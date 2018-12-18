@@ -11,8 +11,8 @@ class App extends Component {
     // const endpoint="consolidated_screening_list"
     // const endpoint="trade_leads"
     // const endpoint="trade_events"
-    // const endpoint="export_assistance centers"
-    const endpoint="international_office_locations"
+    const endpoint="export_assistance_centers"
+    // const endpoint="international_office_locations"
 
     const API_KEY="ShCzzrAkXLpMTsTlhFhUjD29"
 

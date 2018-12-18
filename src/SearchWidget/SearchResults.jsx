@@ -42,7 +42,7 @@ class SearchResults extends Component {
           return (<SearchDetails 
             key={item.id}
             zip_code={item.zip_code}
-            officeName={item.office_name}
+            office_name={item.office_name}
             address={item.address}
             email={item.email}
             phone={item.phone}
