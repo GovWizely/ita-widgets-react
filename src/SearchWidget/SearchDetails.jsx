@@ -40,6 +40,44 @@ class SearchDetails extends Component {
                 </tbody>
               </table>
             );
+        case "trade_events":
+          return (
+            <table>
+              <tbody>
+                <tr><td>Event Name</td><td>{this.props.event_name}</td></tr>
+                <tr><td>Event Type</td><td>{this.props.event_type}</td></tr>
+                <tr><td>Description</td><td>{this.props.description}</td></tr>
+                <tr><td>Start Date</td><td>{this.props.start_date}</td></tr>
+                <tr><td>End Date</td><td>{this.props.end_date}</td></tr>
+                <tr><td>Venues</td><td>{this.props.venues}</td></tr>
+                <tr><td>URL</td><td><a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.url}</a></td></tr>
+                <tr><td>Source</td><td>{this.props.source}</td></tr>
+              </tbody>
+            </table>
+          );
+        case "export_assistance_centers":
+          return (
+            <table>
+              <tbody>
+                <tr><td>Zip Code</td><td>{this.props.zip_code}</td></tr>
+                <tr><td>Office Name</td><td>{this.props.office_name}</td></tr>
+                <tr><td>Address</td><td>{this.props.address}</td></tr>
+                <tr><td>Email</td><td>{this.props.email}</td></tr>
+                <tr><td>Phone</td><td>{this.props.phone}</td></tr>
+              </tbody>
+            </table>
+          );
+        case "international_office_locations":
+          return (
+            <table>
+              <tbody>
+                <tr><td>Post</td><td>{this.props.post}</td></tr>
+                <tr><td>Address</td><td>{this.props.address}</td></tr>
+                <tr><td>Email</td><td>{this.props.email}</td></tr>
+                <tr><td>Phone</td><td>{this.props.phone}</td></tr>
+              </tbody>
+            </table>
+          );
         default: return null;
       }
     };
