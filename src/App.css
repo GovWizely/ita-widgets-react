@@ -11,6 +11,10 @@
   line-height: 1em;
 }
 
+h3 {
+  margin: 3px auto 9px;
+}
+
 ul {
   float: left;
   margin-top: 5px;
@@ -135,7 +139,7 @@ form {
 form > input {
   display: inline-block;
   position: relative;
-  top: 0px;
+  top: -1px;
   width: 33%;
   height: 36px;
   line-height: 24px;
@@ -149,8 +153,8 @@ form > input {
 
 button[type=submit] {
   display: inline-block;
-  position: absolute;
-  top: 37.75px;
+  position: relative;
+  top: 0px;
   /* margin: 0 auto; */
   background-color: #c3d5f0;
   border: none;
@@ -162,8 +166,8 @@ button[type=submit] {
 
 .Dropdown {
   display: inline-block;
-  position: absolute;
-  top: 0.75px;
+  position: relative;
+  top: 0px;
   /* margin: 0 auto; */
   border: none;
   width: 33%;
