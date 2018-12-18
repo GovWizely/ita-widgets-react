@@ -4,10 +4,10 @@ These are HTML search widgets written in React, intended to replicate the behavi
 
 List of widgets:
 * [X] ~~*1. Consolidated Screening List*~~    
-* [X] ~~*2. Trade Leads*~~  New dropdown menu, but the positioning is still off...
-* [ ] 3. Trade Events
-* [ ] 4. Export Assistance Centers
-* [ ] 5. International Office Locations
+* [X] ~~*2. Trade Leads*~~
+* [X] ~~*3. Trade Events*~~
+* [X] ~~*4. Export Assistance Centers*~~  Known issue: addresses display with `<br>` in the table cell
+* [X] ~~*5. International Office Locations*~~ Known issue: addresses display with `<br>` in the table cell
 
 To start, confirm or change the desired endpoint in `src/App.js`, then run `npm start`.
 
