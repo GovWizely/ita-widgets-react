@@ -37,6 +37,12 @@ class SearchContainer extends Component {
         return `&name=${this.state.queryString}&fuzzy_name=true`;
       case "trade_leads":
         return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
+      case "trade_events":
+        return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
+      case "export_assistance centers":
+        return `&zipcodes=${this.state.queryString}&countries=${this.state.selected.value}`;
+      case "international_office_locations":
+        return `&city=${this.state.queryString}&countries=${this.state.selected.value}`;
       default: return null
     }
   }
@@ -83,14 +89,14 @@ class SearchContainer extends Component {
           <input 
             type="text"
             name="queryString"
-            placeholder="Enter search query"
+            placeholder={widgetInfo[this.props.endpoint].placeholder || "Enter search query"}
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          {(this.props.endpoint === "trade_leads") ? (
+          {(this.props.endpoint === "trade_leads" || this.props.endpoint === "trade_events" || this.props.endpoint === "international_office_locations") ? (
             <Select
             options={widgetInfo.countriesList}
-            placeholder={this.state.selected.label || "Select country"}
+            placeholder={this.state.selected.label || "Enter search query"}
             onChange={this._onSelect}
             value={this.state.selected.value}
             className="Dropdown"
