@@ -2,7 +2,6 @@
   --theme-color: #3b75cd;
 }
 .App {
-  /* text-align: center; */
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   margin: 0 auto;
@@ -72,7 +71,6 @@ button[type=reset] {
 } */
 
 .footer {
-  /* background-color: #0851ab; */
   background-color: var(--theme-color);
   color: white;
   height: 40px;
@@ -129,7 +127,6 @@ form {
   text-align: center;
   background-color: var(--theme-color);
   color: white;
-  /* display: inline-block; */
   margin: 0;
   padding: 10px 15px;
   width: 602px;
@@ -155,7 +152,6 @@ button[type=submit] {
   display: inline-block;
   position: relative;
   top: 0px;
-  /* margin: 0 auto; */
   background-color: #c3d5f0;
   border: none;
   height: 38px;
@@ -168,10 +164,8 @@ button[type=submit] {
   display: inline-block;
   position: relative;
   top: 0px;
-  /* margin: 0 auto; */
   border: none;
   width: 33%;
-  /* height: 26px; */
   border-radius: 0;
   color: black;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -184,49 +178,7 @@ button[type=submit] {
   border-left: 1px dotted var(--theme-color);
 }
 
-/* .Dropdown-root__indicator {
-  border: none;
-} */
-
-/* .Dropdown-root {
-  display: inline-block;
-  height: 26px;
-  background-color: white;
-  margin: 0 0 0 2px;
-  border-left: 1px solid #c3d5f0;
-  border: none;
-  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  color: black;
-  width: 100px;
-}  */
-
-/* .Dropdown-control, .Dropdown-arrow-wrapper {
-  display: inline;
-  background-color: white;
-} */
-
-/* .Dropdown-placeholder {
-  display: inline-block;
-  background-color: white;
-  padding: 7px;
-} */
-
-/* .Dropdown-menu {
-  background-color: white;
-  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  color: black;
-} */
-
-/* .Dropdown-option {
-  margin: 2px;
-}  */
-
 p {
-  /* color: white; */
   display: block;
   font-size: 16px;
   height: 19px;
