@@ -10,7 +10,7 @@ class SearchResults extends Component {
         case "consolidated_screening_list":
           return (<SearchDetails
             key={item.id}
-            name={item.name}
+            name={item.name} // this needs to be first in the list after the key prop
             remarks={item.remarks}
             source={item.source}
             altNames={item.alt_names}
@@ -19,7 +19,7 @@ class SearchResults extends Component {
         case "trade_leads":
           return (<SearchDetails
             key={item.id}
-            title={item.title}
+            title={item.title} // this needs to be first in the list after the key prop
             description={item.description}
             url={item.url}
             contact={item.contact}
