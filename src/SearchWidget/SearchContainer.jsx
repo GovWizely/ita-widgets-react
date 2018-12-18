@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
-// import Dropdown from 'react-dropdown';
 import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
 import '../App.css';

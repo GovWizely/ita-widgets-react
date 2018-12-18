@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dotenv": "^6.2.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-dropdown": "^1.6.2",
     "react-icons": "^3.2.2",
     "react-js-pagination": "^3.0.2",
     "react-scripts": "2.1.1",
