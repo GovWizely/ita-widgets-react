@@ -63,7 +63,20 @@ button[type=reset] {
 
 .resultsList > div {
   display: inline-block;
-  margin: 10px;
+  height: auto;
+  overflow: visible;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.resultsList > div > p {
+  display: inline-block;
+  height: auto;
+  overflow: auto;
+}
+
+.resultsList > div > p > a {
+  height: auto;
 }
 
 /* .resultsList > div:not(:last-child) {
@@ -84,14 +97,15 @@ table {
   -webkit-border-vertical-spacing: 0px;
   border: 1px solid;
   border-width: 0 0 1px 1px;
-  display: table;
+  display: block;
   empty-cells: show;
   list-style-type: none;
-  margin: 15px 0 15px;
-  overflow-x: visible;
-  overflow-y: visible;
+  margin: 5px 0 10px;
+  overflow-x: auto;
+  overflow-y: auto;
   text-align: left;
   width: 518px;
+
   word-break: normal;
   zoom: 1;
 }
