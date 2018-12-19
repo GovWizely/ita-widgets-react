@@ -23,10 +23,10 @@ class SearchDetails extends Component {
           return (
             <table>
               <tbody>
-                <tr><td>Name</td><td>{this.props.name}</td></tr>
-                <tr><td>Remarks</td><td>{this.props.remarks}</td></tr>
-                <tr><td>Source</td><td>{this.props.source}</td></tr>
-                <tr><td>Alt Names</td><td>{this.props.alt_names}</td></tr>
+                <tr><td>Name</td><td>{this.props.item.name}</td></tr>
+                <tr><td>Remarks</td><td>{this.props.item.remarks}</td></tr>
+                <tr><td>Source</td><td>{this.props.item.source}</td></tr>
+                <tr><td>Alt Names</td><td>{this.props.item.alt_names}</td></tr>
               </tbody>
             </table>
           );
@@ -34,9 +34,9 @@ class SearchDetails extends Component {
           return (
               <table>
                 <tbody>
-                  <tr><td>Description</td><td>{this.props.description}</td></tr>
-                  <tr><td>URL</td><td><a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.url}</a></td></tr>
-                  <tr><td>Contact</td><td>{this.props.contact}</td></tr>
+                  <tr><td>Description</td><td>{this.props.item.description}</td></tr>
+                  <tr><td>URL</td><td><a href={this.props.item.url} target="_blank" rel="noopener noreferrer">{this.props.item.url}</a></td></tr>
+                  <tr><td>Contact</td><td>{this.props.item.contact}</td></tr>
                 </tbody>
               </table>
             );
@@ -44,14 +44,14 @@ class SearchDetails extends Component {
           return (
             <table>
               <tbody>
-                <tr><td>Event Name</td><td>{this.props.event_name}</td></tr>
-                <tr><td>Event Type</td><td>{this.props.event_type}</td></tr>
-                <tr><td>Description</td><td>{this.props.description}</td></tr>
-                <tr><td>Start Date</td><td>{this.props.start_date}</td></tr>
-                <tr><td>End Date</td><td>{this.props.end_date}</td></tr>
-                <tr><td>Venues</td><td>{this.props.venues[0].location}</td></tr>
-                <tr><td>URL</td><td><a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.url}</a></td></tr>
-                <tr><td>Source</td><td>{this.props.source}</td></tr>
+                <tr><td>Event Name</td><td>{this.props.item.event_name}</td></tr>
+                <tr><td>Event Type</td><td>{this.props.item.event_type}</td></tr>
+                <tr><td>Description</td><td>{this.props.item.description}</td></tr>
+                <tr><td>Start Date</td><td>{this.props.item.start_date}</td></tr>
+                <tr><td>End Date</td><td>{this.props.item.end_date}</td></tr>
+                <tr><td>Venues</td><td>{this.props.item.venues[0].location}</td></tr>
+                <tr><td>URL</td><td><a href={this.props.item.url} target="_blank" rel="noopener noreferrer">{this.props.item.url}</a></td></tr>
+                <tr><td>Source</td><td>{this.props.item.source}</td></tr>
               </tbody>
             </table>
           );
@@ -59,13 +59,11 @@ class SearchDetails extends Component {
           return (
             <table>
               <tbody>
-                <tr><td>Zip Code</td><td>{this.props.zip_code}</td></tr>
-                <tr><td>Office Name</td><td>{this.props.office_name}</td></tr>
-                {/* <tr><td>Address</td><td>{this.props.address.join('<br>')}</td></tr> */}
-                {/* <tr><td>Address</td><td>{this.props.address.map((line, i) => <p key={i}>{line}</p>)}</td></tr> */}
-                <tr><td>Address</td><td>{this.props.address.map((line, i) => <div key={i}>{line}</div>)}</td></tr>
-                <tr><td>Email</td><td>{this.props.email}</td></tr>
-                <tr><td>Phone</td><td>{this.props.phone}</td></tr>
+                <tr><td>Zip Code</td><td>{this.props.item.zip_code}</td></tr>
+                <tr><td>Office Name</td><td>{this.props.item.office_name}</td></tr>
+                <tr><td>Address</td><td>{this.props.item.address.map((line, i) => <div key={i}>{line}</div>)}</td></tr>
+                <tr><td>Email</td><td>{this.props.item.email}</td></tr>
+                <tr><td>Phone</td><td>{this.props.item.phone}</td></tr>
               </tbody>
             </table>
           );
@@ -73,10 +71,10 @@ class SearchDetails extends Component {
           return (
             <table>
               <tbody>
-                <tr><td>Post</td><td>{this.props.post}</td></tr>
-                <tr><td>Address</td><td>{this.props.address.map((line, i) => <div key={i}>{line}</div>)}</td></tr>
-                <tr><td>Email</td><td>{this.props.email}</td></tr>
-                <tr><td>Phone</td><td>{this.props.phone}</td></tr>
+                <tr><td>Post</td><td>{this.props.item.post}</td></tr>
+                <tr><td>Address</td><td>{this.props.item.address.map((line, i) => <div key={i}>{line}</div>)}</td></tr>
+                <tr><td>Email</td><td>{this.props.item.email}</td></tr>
+                <tr><td>Phone</td><td>{this.props.item.phone}</td></tr>
               </tbody>
             </table>
           );
@@ -89,7 +87,7 @@ class SearchDetails extends Component {
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <p><a href="#" title="Expand details table" aria-label="Expand details table" onClick={this.handleClick}>
           {(this.props.endpoint==="export_assistance_centers") ? 
-            `${this.props.zip_code} - ${this.props.office_name}` : 
+            `${this.props.item.zip_code} - ${this.props.item.office_name}` : 
             `${this.props[Object.keys(this.props)[0]]}` 
           }</a></p>
           
