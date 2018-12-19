@@ -95,7 +95,7 @@ class SearchContainer extends Component {
           {(this.props.endpoint === "trade_leads" || this.props.endpoint === "trade_events" || this.props.endpoint === "international_office_locations") ? (
             <Select
             options={widgetInfo.countriesList}
-            placeholder={this.state.selected.label || "Enter search query"}
+            placeholder={this.state.selected.label || "Select Country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
             className="Dropdown"
