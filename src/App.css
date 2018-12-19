@@ -181,6 +181,7 @@ button[type=submit] {
   width: 33%;
   border-radius: 0;
   color: black;
+  background-color: white;
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -189,6 +190,11 @@ button[type=submit] {
   border: none;
   border-radius: 0;
   border-left: 1px dotted var(--theme-color);
+  background-color: white;
+}
+
+.react-select > * {
+  background-color: white;
 }
 
 p {

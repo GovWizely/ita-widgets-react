@@ -76,7 +76,7 @@ class SearchContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
-      selected: {},
+      selected: {value: '', label: 'Select a Country'},
     });
   }
 
@@ -99,6 +99,7 @@ class SearchContainer extends Component {
             onChange={this._onSelect}
             value={this.state.selected.value}
             className="Dropdown"
+            classNamePrefix="react-select"
             />
           ) : null }
           <button type="submit"><IoMdSearch size="2em"/></button>
