@@ -6,8 +6,8 @@ List of widgets:
 * [X] ~~*1. Consolidated Screening List*~~
 * [X] ~~*2. Trade Leads*~~
 * [X] ~~*3. Trade Events*~~
-* [X] ~~*4. Export Assistance Centers*~~  Known issue: addresses display with `<br>` in the table cell
-* [X] ~~*5. International Office Locations*~~ Known issue: addresses display with `<br>` in the table cell
+* [X] ~~*4. Export Assistance Centers*~~
+* [X] ~~*5. International Office Locations*~~
 
 To start, confirm or change the desired endpoint in `src/App.js`, then run `npm start`.
 
