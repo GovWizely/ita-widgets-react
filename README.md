@@ -3,11 +3,11 @@
 These are HTML search widgets written in React, intended to replicate the behavior of these: https://developer.trade.gov/search-widgets.html
 
 List of widgets:
-* [X] ~~*1. Consolidated Screening List*~~
-* [X] ~~*2. Trade Leads*~~
-* [X] ~~*3. Trade Events*~~
-* [X] ~~*4. Export Assistance Centers*~~
-* [X] ~~*5. International Office Locations*~~
+* Consolidated Screening List
+* Trade Leads
+* Trade Events
+* Export Assistance Centers
+* International Office Locations
 
 To start, confirm or change the desired endpoint in `src/App.js`, then run `npm start`.
 
