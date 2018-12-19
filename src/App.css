@@ -97,14 +97,15 @@ table {
   -webkit-border-vertical-spacing: 0px;
   border: 1px solid;
   border-width: 0 0 1px 1px;
-  display: block;
+  /* display: block; */
+  table-layout: auto;
+  width: 518px;
   empty-cells: show;
   list-style-type: none;
-  margin: 5px 0 10px;
+  margin: 5px 0px 0px 10px;
   overflow-x: auto;
   overflow-y: auto;
   text-align: left;
-  width: 518px;
   word-break: normal;
   zoom: 1;
 }
@@ -113,6 +114,7 @@ tr {
   display: table-row;
   border-collapse: collapse;
   vertical-align: middle;
+  overflow-x: auto;
 }
 
 td {
