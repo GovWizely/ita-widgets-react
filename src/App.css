@@ -193,8 +193,9 @@ button[type=submit] {
   background-color: white;
 }
 
-.react-select > * {
+.react-select__menu-list {
   background-color: white;
+  border: 1px dotted var(--theme-color);
 }
 
 p {
