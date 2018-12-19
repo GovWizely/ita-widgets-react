@@ -3,11 +3,11 @@
 These are HTML search widgets written in React, intended to replicate the behavior of these: https://developer.trade.gov/search-widgets.html
 
 List of widgets:
-* [X] ~~*1. Consolidated Screening List*~~    
-* [X] ~~*2. Trade Leads*~~  But, the dropdown menu looks and acts awkwardly still
-* [ ] 3. Trade Events
-* [ ] 4. Export Assistance Centers
-* [ ] 5. International Office Locations
+* [X] ~~*1. Consolidated Screening List*~~
+* [X] ~~*2. Trade Leads*~~
+* [X] ~~*3. Trade Events*~~
+* [X] ~~*4. Export Assistance Centers*~~
+* [X] ~~*5. International Office Locations*~~
 
 To start, confirm or change the desired endpoint in `src/App.js`, then run `npm start`.
 

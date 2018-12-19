@@ -6,7 +6,14 @@ import SearchContainer from './SearchWidget/SearchContainer';
 class App extends Component {
   render() {
 
-    const endpoint="consolidated_screening_list" /* possible endpoints: "consolidated_screening_list" or "trade_leads" */
+    /* possible endpoints: "consolidated_screening_list", "trade_leads", "trade_events", "export_assistance centers", "international_office_locations" */
+    
+    // const endpoint="consolidated_screening_list"
+    // const endpoint="trade_leads"
+    // const endpoint="trade_events"
+    const endpoint="export_assistance_centers"
+    // const endpoint="international_office_locations"
+
     const API_KEY="ShCzzrAkXLpMTsTlhFhUjD29"
 
     return (

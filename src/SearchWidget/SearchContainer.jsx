@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
-import Dropdown from 'react-dropdown';
+import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
 import '../App.css';
 import widgetInfo from '../widgetInfo';
@@ -15,7 +15,7 @@ class SearchContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
-      selected: {},
+      selected: {value: ''},
     };
     this._onSelect = this._onSelect.bind(this)
   }
@@ -36,6 +36,12 @@ class SearchContainer extends Component {
         return `&name=${this.state.queryString}&fuzzy_name=true`;
       case "trade_leads":
         return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
+      case "trade_events":
+        return `&q=${this.state.queryString}&countries=${this.state.selected.value}`;
+      case "export_assistance_centers":
+        return `&zip_codes=${this.state.queryString}`;
+      case "international_office_locations":
+        return `&city=${this.state.queryString}&countries=${this.state.selected.value}`;
       default: return null
     }
   }
@@ -70,7 +76,7 @@ class SearchContainer extends Component {
       totalItemsCount: 0,
       submitted: false,
       activePage: 1,
-      selected: {},
+      selected: {value: '', label: 'Select a Country'},
     });
   }
 
@@ -78,23 +84,25 @@ class SearchContainer extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <p>Search {widgetInfo[this.props.endpoint].title}:</p>
+          <h3>Search {widgetInfo[this.props.endpoint].title}:</h3>
           <input 
             type="text"
             name="queryString"
-            placeholder="Enter search query"
+            placeholder={widgetInfo[this.props.endpoint].placeholder || "Enter search query"}
             value={this.state.queryString}
             onChange={(event) => this.handleChange(event)}
           />
-          {(this.props.endpoint === "trade_leads") ? (
-            <Dropdown 
+          {(this.props.endpoint === "trade_leads" || this.props.endpoint === "trade_events" || this.props.endpoint === "international_office_locations") ? (
+            <Select
             options={widgetInfo.countriesList}
-            placeholder={this.state.selected.label || "Select country"}
+            placeholder={this.state.selected.label || "Select Country"}
             onChange={this._onSelect}
             value={this.state.selected.value}
+            className="Dropdown"
+            classNamePrefix="react-select"
             />
           ) : null }
-          <button type="submit"><IoMdSearch /></button>
+          <button type="submit"><IoMdSearch size="2em"/></button>
         </form>
         { this.state.submitted ? 
           <div className="results">
