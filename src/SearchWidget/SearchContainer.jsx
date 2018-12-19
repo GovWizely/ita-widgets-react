@@ -82,7 +82,7 @@ class SearchContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <h3>Search {widgetInfo[this.props.endpoint].title}:</h3>
           <input 
