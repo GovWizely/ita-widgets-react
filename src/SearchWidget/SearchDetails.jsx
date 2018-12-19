@@ -61,7 +61,8 @@ class SearchDetails extends Component {
               <tbody>
                 <tr><td>Zip Code</td><td>{this.props.zip_code}</td></tr>
                 <tr><td>Office Name</td><td>{this.props.office_name}</td></tr>
-                <tr><td>Address</td><td>{this.props.address.join('<br>')}</td></tr>
+                {/* <tr><td>Address</td><td>{this.props.address.join('<br>')}</td></tr> */}
+                <tr><td>Address</td><td>{this.props.address.map((line, i) => <p key={i}>{line}</p>)}</td></tr>
                 <tr><td>Email</td><td>{this.props.email}</td></tr>
                 <tr><td>Phone</td><td>{this.props.phone}</td></tr>
               </tbody>
@@ -72,7 +73,7 @@ class SearchDetails extends Component {
             <table>
               <tbody>
                 <tr><td>Post</td><td>{this.props.post}</td></tr>
-                <tr><td>Address</td><td>{this.props.address.join('<br>')}</td></tr>
+                <tr><td>Address</td><td>{this.props.address.map((line, i) => <p key={i}>{line}</p>)}</td></tr>
                 <tr><td>Email</td><td>{this.props.email}</td></tr>
                 <tr><td>Phone</td><td>{this.props.phone}</td></tr>
               </tbody>
