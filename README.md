@@ -3,9 +3,9 @@
 These are HTML search widgets written in React, intended to replicate the behavior of these: https://developer.trade.gov/search-widgets.html
 
 List of widgets:
-* [X] ~~*1. Consolidated Screening List*~~    
-* [X] ~~*2. Trade Leads*~~ Known issue: submit "computer", with no country, some of the detail tables overlap the title.
-* [X] ~~*3. Trade Events*~~ Known issue: if multiple venues present, the table only lists the first.
+* [X] ~~*1. Consolidated Screening List*~~
+* [X] ~~*2. Trade Leads*~~
+* [X] ~~*3. Trade Events*~~
 * [X] ~~*4. Export Assistance Centers*~~  Known issue: addresses display with `<br>` in the table cell
 * [X] ~~*5. International Office Locations*~~ Known issue: addresses display with `<br>` in the table cell
 
