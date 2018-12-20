@@ -6,7 +6,7 @@ export const CSLResults = {
   total: 1, 
   results: [
     {id: 1,
-    name: 'Fakey McNamerson',
+    name: 'Bobby Droptables',
     remarks: '',
     source: 'Denied Persons List (DPL) - Bureau of Industry and Security',
     alt_names: [],}
@@ -15,10 +15,10 @@ export const CSLResults = {
 };
 export const CSLDetails = {
   key: 1,
-  name: 'Fakey McNamerson',
+  name: 'Bobby Droptables',
   item: {
     id: 1,
-    name: 'Fakey McNamerson',
+    name: 'Bobby Droptables',
     remarks: '',
     source: 'Denied Persons List (DPL) - Bureau of Industry and Security',
     alt_names: "Smith",
