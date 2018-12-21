@@ -3,8 +3,27 @@ import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
 import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
-import '../App.css';
 import widgetInfo from '../widgetInfo';
+
+let OS_type = "Unknown OS";
+if (navigator.appVersion.indexOf("Win")!==-1) OS_type="Windows";
+if (navigator.appVersion.indexOf("Mac")!==-1) OS_type="MacOS";
+if (navigator.appVersion.indexOf("Linux")!==-1) OS_type="Linux";
+console.log('Your OS: ' + OS_type);
+
+if (OS_type === "Windows") {
+  import('../AppWin.css')
+    .then(console.log("Importing '../AppWin.css'"));
+} else if (OS_type === "MacOS") {
+  import('../AppMac.css')
+    .then(console.log("Importing '../AppMac.css'"));
+} else if (OS_type === "Linux") {
+  import('../AppLinux.css')
+    .then(console.log("Importing '../AppLinux.css'"));
+} else {
+  import('../App.css')
+    .then(console.log("Importing '../App.css'"));
+}
 
 class SearchContainer extends Component {
   constructor() {
