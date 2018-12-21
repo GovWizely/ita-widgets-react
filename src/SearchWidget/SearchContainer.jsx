@@ -3,8 +3,8 @@ import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
 import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
-import '../App.css';
 import widgetInfo from '../widgetInfo';
+import '../style.css';
 
 class SearchContainer extends Component {
   constructor() {
