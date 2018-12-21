@@ -28,9 +28,9 @@ form {
 form > input {
   display: inline-block;
   position: relative;
-  top: 0px;  /* All other browsers and OS */
-  /* top: -3px;  for Firefox on Windows */
-  /* top: -2px; for Firefox on Mojave */
+  -webkit-top: 2px; /* for Chrome on Mojave */
+  -moz-top: 2px; /* for Firefox on Mojave */
+  top: 0px; /* All other browsers and OS */
   width: 33%;
   height: 36px;
   line-height: 24px;
@@ -45,11 +45,9 @@ form > input {
 button[type=submit] {
   display: inline-block;
   position: relative;
-  /* top: 6.5px; for Chrome on Ubuntu and Windows */
-  top: 4px;  /* for Chrome on Mojave */
-  /* top: 6px; for Edge on Windows */
-  /* top: 3px;  for Firefox on Windows */
-  /* top: 2px; for Firefox on Mojave */
+  -webkit-top: 3.5px;  /* for Chrome on Mojave */
+  -moz-top: 2px; /* for Firefox on Mojave */
+  top: 3.5px;
   background-color: #c3d5f0;
   border: none;
   height: 38px;
