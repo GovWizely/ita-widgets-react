@@ -44,9 +44,10 @@ form > input {
 button[type=submit] {
   display: inline-block;
   position: relative;
-  -webkit-top: 6.5px; /* for Chrome on Ubuntu and Windows */
-  top: 6px; /* for Edge on Windows */
+  -webkit-top: 6.5px; /* for Chrome on Ubuntu and Windows, but windows isn't recognizing this... */
+  -ms-top: 6px; /* for Edge on Windows */
   -moz-top: 3px; /* for Firefox on Windows */
+  top: 6px;
   background-color: #c3d5f0;
   border: none;
   height: 38px;
