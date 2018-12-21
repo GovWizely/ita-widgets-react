@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
 
 class SearchDetails extends Component {
   constructor(props) {
