@@ -9,7 +9,7 @@ List of widgets:
 * Export Assistance Centers
 * International Office Locations
 
-To start, confirm or change the desired endpoint in `src/App.js`, then run `npm start`.
+To start, confirm or change the desired endpoint in `src/index.js`, then run `npm start`.
 
 ---------------------------
 
