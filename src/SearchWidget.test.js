@@ -1,16 +1,24 @@
 import React from 'react';
-import { configure, shallow, mount } from 'enzyme';
+import { configure, shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import SearchContainer from './SearchWidget/SearchContainer';
 import SearchResults from './SearchWidget/SearchResults';
 import SearchDetails from './SearchWidget/SearchDetails';
-import widgetInfo from './widgetInfo';
+
 import * as mockProps from './mockProps';
 import * as mockState from './mockState';
+
+jest.mock('./widgetInfo');
+import widgetInfo from './widgetInfo';
+jest.requireActual('./widgetInfo');
 
 configure ({adapter: new Adapter()});
 
 describe('endpoint="consolidated_screening_list">', () => {
+  // beforeEach(() => {
+  //   widgetInfo.mockClear();
+  // });
+
   it('<SearchDetails/> should render a table and heading containing the info when receiving a search result item', () => {
     let wrapper = shallow(<SearchDetails />).setState({toggleDetails: true}).setProps(mockProps.CSLDetails);
     expect(wrapper.contains(<td>'Smith'</td>));
@@ -18,13 +26,14 @@ describe('endpoint="consolidated_screening_list">', () => {
   });
 
   it('<SearchResults/> should render the <SearchDetails/> component along with the number of results', () => { // this fails, can't traverse results array
-    let wrapper = shallow(<SearchResults widgetInfo={widgetInfo}/>).setProps(mockProps.CSLResults);
+    let wrapper = render(<SearchResults />).setProps(mockProps.CSLResults);
     expect(wrapper.find(SearchDetails));
     expect(wrapper.contains(<p>1 results More Information About the Results</p>));
   });
 
   it('<SearchContainer/> should render <SearchResults/> component', () => { // this fails, Cannot read property 'title' of undefined
-    let wrapper = mount(<SearchContainer widgetInfo={() => widgetInfo}/>).setState(mockState.CSLContainer).setProps(mockProps.CSLContainer);
+    let wrapper = render(<SearchContainer />).setState(mockState.CSLContainer).setProps(mockProps.CSLContainer);
+    console.log(widgetInfo[this.props.endpoint]);
     expect(wrapper.find(SearchResults));
     // expect(wrapper.contains(<h3>Search The Consolidated Screening List:</h3>));
   });
