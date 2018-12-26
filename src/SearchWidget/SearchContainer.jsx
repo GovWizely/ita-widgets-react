@@ -18,6 +18,7 @@ class SearchContainer extends Component {
       loading: false,
       activePage: 1,
       selected: {value: ''},
+      errorMessage: '',
     };
     this._onSelect = this._onSelect.bind(this)
   }
@@ -60,7 +61,9 @@ class SearchContainer extends Component {
           totalItemsCount: response.total,
           loading: false,
        }))
-      .catch(error => console.log(error))
+      .catch(error => console.log(error), (error) => {
+        this.setState({loading: false, errorMessage: error});
+      })
     })
   }
 
@@ -81,6 +84,7 @@ class SearchContainer extends Component {
       submitted: false,
       activePage: 1,
       selected: {value: '', label: 'Select a Country'},
+      errorMessage: '',
     });
   }
 
@@ -116,6 +120,7 @@ class SearchContainer extends Component {
             total={this.state.totalItemsCount}
             endpoint={this.props.endpoint}
             /> : null }
+        { ((this.state.errorMessage !== '') && this.state.submitted) ? <p>There was an error processing the request: {this.state.errorMessage}</p> : null }
         { this.state.submitted ? (
           <div className="footer">
             <Pagination 
