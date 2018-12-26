@@ -223,3 +223,8 @@ p {
 p strong {
   color: white; 
 }
+
+.spinner {
+  width: 80px;
+  margin: auto;
+}

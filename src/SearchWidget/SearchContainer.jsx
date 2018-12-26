@@ -3,6 +3,7 @@ import SearchResults from './SearchResults';
 import Pagination from "react-js-pagination";
 import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
+import Loader from 'react-loader-spinner';
 import widgetInfo from '../widgetInfo';
 import '../style.css';
 
@@ -14,6 +15,7 @@ class SearchContainer extends Component {
       results: [],
       totalItemsCount: 0,
       submitted: false,
+      loading: false,
       activePage: 1,
       selected: {value: ''},
     };
@@ -48,16 +50,18 @@ class SearchContainer extends Component {
   
   fetchResults = () => {
     const targetUrl = `${widgetInfo.baseUrl+widgetInfo[this.props.endpoint].endpoint}?api_key=${this.props.API_KEY}${this.queryParams()}&offset=${(this.state.activePage-1)*10}`;
-
-    console.log(`Fetching from: ${targetUrl}`);    
-    fetch(targetUrl)
-    .then(response => response.json())
-    .then(response => this.setState({ 
-        results: response.results,
-        totalItemsCount: response.total,
-        submitted: true,
-     }))
-    .catch(error => console.log(error))
+    
+    console.log(`Fetching from: ${targetUrl}`);
+    this.setState({loading: true, submitted: true}, () => {
+      fetch(targetUrl)
+      .then(response => response.json())
+      .then(response => this.setState({ 
+          results: response.results,
+          totalItemsCount: response.total,
+          loading: false,
+       }))
+      .catch(error => console.log(error))
+    })
   }
 
   handleSubmit = event => {
@@ -104,26 +108,27 @@ class SearchContainer extends Component {
           ) : null }
           <button type="submit"><IoMdSearch size="2em"/></button>
         </form>
-        { this.state.submitted ? 
-          <div className="results">
-            <SearchResults 
-              results={this.state.results} 
-              total={this.state.totalItemsCount}
-              endpoint={this.props.endpoint}
-              />
-            <div className="footer">
-              <Pagination 
-                activePage={this.state.activePage}
-                totalItemsCount={this.state.totalItemsCount}
-                firstPageText="First"
-                prevPageText="<"
-                nextPageText=">"
-                lastPageText="Last"
-                onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
-              <button type="reset" id="clearButton" onClick={this.clearResults}>Clear</button>
-            </div>
-          </div>
-        : null }
+        { this.state.loading ? <div className="spinner"><Loader type="Bars" color="#00CC66" width="100" /></div> : null }
+        { (this.state.submitted && !this.state.loading) ? 
+          <SearchResults 
+            className="results"
+            results={this.state.results} 
+            total={this.state.totalItemsCount}
+            endpoint={this.props.endpoint}
+            /> : null }
+        { this.state.submitted ? (
+          <div className="footer">
+            <Pagination 
+              activePage={this.state.activePage}
+              totalItemsCount={this.state.totalItemsCount}
+              firstPageText="First"
+              prevPageText="<"
+              nextPageText=">"
+              lastPageText="Last"
+              onChange={(pageNumber) => this.handlePageChange(pageNumber)} />
+            <button type="reset" id="clearButton" onClick={this.clearResults}>Clear</button>
+          </div> 
+          ) : null }
       </div>
     );
   }
