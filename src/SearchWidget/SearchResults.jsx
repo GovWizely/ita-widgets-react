@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchDetails from './SearchDetails';
-import { widgetInfo } from '../widgetInfo';
+import {widgetInfo} from '../widgetInfo';
 
 class SearchResults extends Component {
 
@@ -23,7 +23,7 @@ class SearchResults extends Component {
 
     return (
       <div className="resultsList">
-        <p>{this.props.total} results {(this.props.endpoint === "consolidated_screening_list") ? <a href={widgetInfo.consolidated_screening_list.moreInfo}>More Information About the Results</a> : null}</p>
+        <p>{this.props.total} results {(this.props.endpoint === "consolidated_screening_list") ? <a href={widgetInfo.consolidated_screening_list.moreInfo}><i> More Information About the Results</i></a> : null}</p>
         {resultsList}
       </div>
     );
