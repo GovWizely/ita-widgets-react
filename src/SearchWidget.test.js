@@ -7,42 +7,46 @@ import SearchDetails from './SearchWidget/SearchDetails';
 
 import * as mockProps from './mockProps';
 import * as mockState from './mockState';
-
-jest.mock('./widgetInfo');
 import widgetInfo from './widgetInfo';
-jest.requireActual('./widgetInfo');
+
+// jest.mock('./widgetInfo');
+/* eslint-disable import/first */
+// const widgetInfo = jest.requireActual('./widgetInfo');
 
 configure ({adapter: new Adapter()});
 
-describe('endpoint="consolidated_screening_list">', () => {
+describe('endpoint="consolidated_screening_list"', () => {
   // beforeEach(() => {
   //   widgetInfo.mockClear();
   // });
 
   it('<SearchDetails/> should render a table and heading containing the info when receiving a search result item', () => {
     let wrapper = shallow(<SearchDetails />).setState({toggleDetails: true}).setProps(mockProps.CSLDetails);
-    expect(wrapper.contains(<td>'Smith'</td>));
-    expect(wrapper.contains(<p><a>'Fakey McNamerson'</a></p>));
+    // expect(wrapper.find('td')).toHaveLength(8);
+    // expect(wrapper.html()).toEqual("<div><p><a href=\"#\" title=\"Expand details table\" aria-label=\"Expand details table\">Bobby Droptables</a></p><table><tbody><tr><td>Name</td><td>Bobby Droptables</td></tr><tr><td>Remarks</td><td></td></tr><tr><td>Source</td><td>Denied Persons List (DPL) - Bureau of Industry and Security</td></tr><tr><td>Alt Names</td><td>Smith</td></tr></tbody></table></div>");
+    expect(wrapper.contains(<td>Bobby Droptables</td>)).toBe(true);
   });
 
   it('<SearchResults/> should render the <SearchDetails/> component along with the number of results', () => { // this fails, can't traverse results array
-    let wrapper = render(<SearchResults />).setProps(mockProps.CSLResults);
-    expect(wrapper.find(SearchDetails));
-    expect(wrapper.contains(<p>1 results More Information About the Results</p>));
+    let context = {widgetInfo: widgetInfo};
+    let wrapper = shallow(<SearchResults />, {context}).setProps(mockProps.CSLResults);
+    expect(wrapper.shallow(SearchDetails)).toHaveLength(2);
+    expect(wrapper.contains(<p>2 results <a href="http://export.gov/ecr/eg_main_023148.asp">More Information About the Results</a></p>)).toBe(true);
   });
 
-  it('<SearchContainer/> should render <SearchResults/> component', () => { // this fails, Cannot read property 'title' of undefined
-    let wrapper = render(<SearchContainer />).setState(mockState.CSLContainer).setProps(mockProps.CSLContainer);
-    console.log(widgetInfo[this.props.endpoint]);
+  it('<SearchContainer/> should render <SearchResults/> component', (widgetInfo) => { // this fails, Cannot read property 'title' of undefined
+    let wrapper = shallow(<SearchContainer />, widgetInfo).setState(mockState.CSLContainer).setProps(mockProps.CSLContainer);
+    // console.log(widgetInfo[this.props.endpoint]);
     expect(wrapper.find(SearchResults));
     // expect(wrapper.contains(<h3>Search The Consolidated Screening List:</h3>));
   });
 });
 
-// describe('<SearchDetails endpoint="export_assistance_centers"/>', () => {
-//   it('should render the link & table with address correctly', () => {
-//     let wrapper = shallow(<SearchDetails />).setProps(mockProps.EACDetails).setState({toggleDetails: true});
-//     expect(wrapper.contains(<div>03857 - ye olde office</div>)).toEqual(true);
-//     expect(wrapper.contains(<td>Portsmouth, New Hampshire 03801</td>)).toEqual(true);
-//   });
-// })
+describe('endpoint="export_assistance_centers"', () => {
+  it('<SearchDetails/> should render the link & table with address correctly', () => {
+    let wrapper = shallow(<SearchDetails />).setState({toggleDetails: true}).setProps(mockProps.EACDetails);
+    // expect(wrapper.contains(<td>03857 - Ye Olde Office</td>)).toBe(true);
+    // expect(wrapper.html()).toEqual("<div><p><a href=\"#\" title=\"Expand details table\" aria-label=\"Expand details table\">03857 - Ye Olde Office</a></p><table><tbody><tr><td>Zip Code</td><td>03857</td></tr><tr><td>Office Name</td><td>Ye Olde Office</td></tr><tr><td>Address</td><td><div>line1</div><div>Portsmouth, New Hampshire 03801</div></td></tr><tr><td>Email</td><td>email@address</td></tr><tr><td>Phone</td><td>555-1234</td></tr></tbody></table></div>");
+    expect(wrapper.contains(<td><div>line1</div><div>Portsmouth, New Hampshire 03801</div></td>)).toBe(true);
+  });
+})
