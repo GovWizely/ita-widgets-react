@@ -3,13 +3,22 @@ export const CSLContainer = {
   API_KEY: 5,
 };
 export const CSLResults = {
-  total: 1, 
+  total: 2, 
   results: [
-    {id: 1,
-    name: 'Bobby Droptables',
-    remarks: '',
-    source: 'Denied Persons List (DPL) - Bureau of Industry and Security',
-    alt_names: [],}
+    {
+      id: 1,
+      name: 'Bobby Droptables',
+      remarks: '',
+      source: 'Denied Persons List (DPL) - Bureau of Industry and Security',
+      alt_names: [],
+    },
+    {
+      id: 2,
+      name: 'the second name',
+      remarks: '',
+      source: 'ITAR Debarred (DTC) - State Department',
+      alt_name: 'Berty Tyloo',
+    },
   ],
   endpoint: "consolidated_screening_list", 
 };
@@ -31,7 +40,7 @@ export const EACDetails = {
   item: {
     post: "post",
     zip_code: "03857",
-    office_name: "ye olde office",
+    office_name: "Ye Olde Office",
     email: "email@address",
     phone: "555-1234",
     address: ["line1", "Portsmouth, New Hampshire 03801"],
