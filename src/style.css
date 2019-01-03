@@ -1,6 +1,11 @@
 :root {
   --theme-color: #3b75cd;
 }
+
+.root > h1 {
+  text-align: center;
+}
+
 .App {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0 auto;
