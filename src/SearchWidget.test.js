@@ -9,16 +9,9 @@ import * as mockProps from './mockProps';
 import * as mockState from './mockState';
 import widgetInfo from './widgetInfo';
 
-// jest.mock('./widgetInfo');
-/* eslint-disable import/first */
-// const widgetInfo = jest.requireActual('./widgetInfo');
-
 configure ({adapter: new Adapter()});
 
 describe('endpoint="consolidated_screening_list"', () => {
-  // beforeEach(() => {
-  //   widgetInfo.mockClear();
-  // });
 
   it('<SearchDetails/> should render a table and heading containing the info when receiving a search result item', () => {
     let wrapper = shallow(<SearchDetails />).setState({toggleDetails: true}).setProps(mockProps.CSLDetails);
@@ -38,7 +31,7 @@ describe('endpoint="consolidated_screening_list"', () => {
     let context = {widgetInfo: widgetInfo};
     let wrapper = shallow(<SearchContainer {...mockProps.CSLContainer} />, {context}).setState(mockState.CSLContainer);
     expect(wrapper.find(SearchResults));
-    // expect(wrapper.contains(<h3>Search The Consolidated Screening List:</h3>));
+    expect(wrapper.contains(<h3>Search The Consolidated Screening List:</h3>));
   });
 });
 
