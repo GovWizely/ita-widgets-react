@@ -27,16 +27,16 @@ describe('endpoint="consolidated_screening_list"', () => {
     expect(wrapper.contains(<td>Bobby Droptables</td>)).toBe(true);
   });
 
-  it('<SearchResults/> should render the <SearchDetails/> component along with the number of results', () => { // this fails, can't traverse results array
+  it('<SearchResults/> should render the <SearchDetails/> component along with the number of results', () => {
     let context = {widgetInfo: widgetInfo};
-    let wrapper = shallow(<SearchResults />, {context}).setProps(mockProps.CSLResults);
-    expect(wrapper.shallow(SearchDetails)).toHaveLength(2);
-    expect(wrapper.contains(<p>2 results <a href="http://export.gov/ecr/eg_main_023148.asp">More Information About the Results</a></p>)).toBe(true);
+    let wrapper = shallow(<SearchResults {...mockProps.CSLResults} />, {context});
+    expect(wrapper.find(SearchDetails)).toHaveLength(2);
+    expect(wrapper.contains(<p>2 results <a href="http://export.gov/ecr/eg_main_023148.asp"><i> More Information About the Results</i></a></p>)).toBe(true);
   });
 
-  it('<SearchContainer/> should render <SearchResults/> component', (widgetInfo) => { // this fails, Cannot read property 'title' of undefined
-    let wrapper = shallow(<SearchContainer />, widgetInfo).setState(mockState.CSLContainer).setProps(mockProps.CSLContainer);
-    // console.log(widgetInfo[this.props.endpoint]);
+  it('<SearchContainer/> should render <SearchResults/> component', () => {
+    let context = {widgetInfo: widgetInfo};
+    let wrapper = shallow(<SearchContainer {...mockProps.CSLContainer} />, {context}).setState(mockState.CSLContainer);
     expect(wrapper.find(SearchResults));
     // expect(wrapper.contains(<h3>Search The Consolidated Screening List:</h3>));
   });
