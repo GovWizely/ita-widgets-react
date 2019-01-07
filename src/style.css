@@ -4,6 +4,8 @@
 
 .root > h1 {
   text-align: center;
+  color: darkgray;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .App {
