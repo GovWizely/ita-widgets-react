@@ -2,13 +2,13 @@
   --theme-color: #3b75cd;
 }
 
-.root > h1 {
+#widget-container > .root > h1 {
   text-align: center;
   color: darkgray;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.App {
+#widget-container > .root > .App {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0 auto;
   padding: 0;
@@ -16,11 +16,7 @@
   line-height: 1em;
 }
 
-h3 {
-  margin: 3px auto 9px;
-}
-
-form {
+#widget-container > .root > .App > form {
   display: inline-block;
   text-align: center;
   background-color: var(--theme-color);
@@ -31,7 +27,11 @@ form {
   text-align: center;
 }
 
-form > input {
+#widget-container > .root > .App > form > h3 {
+  margin: 3px auto 9px;
+}
+
+#widget-container > .root > .App > form > input {
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -45,7 +45,7 @@ form > input {
   font-family: Arial, sans-serif;
 }
 
-button[type=submit] {
+#widget-container > .root > .App > form > button[type=submit] {
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -57,7 +57,7 @@ button[type=submit] {
   border-bottom-right-radius: 7px;
 }
 
-.Dropdown {
+#widget-container > .root > .App > form > .Dropdown {
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -68,7 +68,7 @@ button[type=submit] {
   background-color: white;
 }
 
-.Dropdown > div {
+#widget-container > .root > .App > form > .Dropdown > div {
   height: 25px;
   border: none;
   border-radius: 0;
@@ -76,12 +76,12 @@ button[type=submit] {
   background-color: white;
 }
 
-.react-select__menu-list {
+#widget-container .react-select__menu-list {
   background-color: white;
   border: 1px dotted var(--theme-color);
 }
 
-.resultsList {
+#widget-container .resultsList {
   border: 1px solid #ddd;
   border-top: 0;
   display: block;
@@ -91,11 +91,11 @@ button[type=submit] {
   padding-bottom: 20px;
 }
 
-.resultsList > p:first-child {
+#widget-container .resultsList > p:first-child {
   margin-left: -15px;
 }
 
-.resultsList > div {
+#widget-container .resultsList > div {
   display: inline-block;
   height: auto;
   overflow: visible;
@@ -103,21 +103,23 @@ button[type=submit] {
   padding: 5px;
 }
 
-.resultsList > div > p {
-  display: inline-block;
+#widget-container .resultsList > div > p {
+  font-size: 16px;
   height: auto;
+  margin: 0 0 8px 0;
+  width: 590px;
   overflow: visible;
 }
 
-.resultsList > div > p > a {
+#widget-container .resultsList > div > p > a {
   height: auto;
 }
 
-/* .resultsList > div:not(:last-child) {
-  border-bottom: 1px solid #c3d5f0;
-} */
+#widget-container > .root > .App > .resultsList > div > p strong {
+  color: white; 
+}
 
-table {
+#widget-container .resultsList div table {
   -webkit-border-horizontal-spacing: 0px;
   -webkit-border-vertical-spacing: 0px;
   border: 1px solid;
@@ -135,14 +137,14 @@ table {
   zoom: 1;
 }
 
-tr {
+#widget-container .resultsList div table tbody tr {
   display: table-row;
   border-collapse: collapse;
   vertical-align: middle;
   overflow-x: auto;
 }
 
-td {
+#widget-container .resultsList div table tbody td {
   background-color: white;
   border: 1px solid;
   border-width: 1px 1px 0 0;
@@ -164,20 +166,20 @@ td {
   zoom: 1;
 }
 
-td:first-child {
+#widget-container .resultsList div table tbody td:first-child {
   word-wrap: break-word;
   word-break: break-word;
   width: 140px;
   text-transform: capitalize;
 }
 
-td:nth-child(2) {
+#widget-container .resultsList div table tbody td:nth-child(2) {
   word-wrap: break-word;
   word-break: break-word;
   width: 440px;
 }
 
-.footer {
+#widget-container > .root > .App > .footer {
   background-color: var(--theme-color);
   color: white;
   height: 40px;
@@ -186,31 +188,31 @@ td:nth-child(2) {
   width: 607px;
 }
 
-ul {
+#widget-container > .root > .App > .footer > ul.pagination {
   float: left;
   margin-top: 5px;
 }
 
-li {
+#widget-container > .root > .App > .footer > ul.pagination > li {
   display: inline;
   padding: 0px 5px;
   line-height: 26px;
 }
 
-li.active {
+#widget-container > .root > .App > .footer > ul.pagination > li.active {
   background-color: #11247D;
 }
 
-li > a {
+#widget-container > .root > .App > .footer > ul.pagination > li > a {
   text-decoration: none;
   color: white;
 }
 
-li > a:hover {
+#widget-container > .root > .App > .footer > ul.pagination > li > a:hover {
   text-decoration: underline;
 }
 
-button[type=reset] {
+#widget-container > .root > .App > .footer > button[type=reset] {
   float: right;
   margin-top: 6px;
   margin-right: 20px;
@@ -219,19 +221,7 @@ button[type=reset] {
   height: 24px;
 }
 
-p {
-  display: block;
-  font-size: 16px;
-  height: 19px;
-  margin: 0 0 8px 0;
-  width: 590px;
-}
-
-p strong {
-  color: white; 
-}
-
-.spinner {
+#widget-container .spinner {
   width: 80px;
   margin: auto;
 }
