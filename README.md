@@ -9,24 +9,6 @@ List of widgets:
 * Export Assistance Centers
 * International Office Locations
 
-To start, add this to the page's `<head>`:
-
-```html
-<script>
-  /* possible endpoints: "consolidated_screening_list", "trade_leads", */
-  /* "trade_events", "export_assistance_centers", "international_office_locations" */
-
-  // var endpoint="consolidated_screening_list";
-  // var endpoint="trade_leads";
-  // var endpoint="trade_events";
-  // var endpoint="export_assistance_centers";
-  var endpoint="international_office_locations";
-
-  var API_KEY="ShCzzrAkXLpMTsTlhFhUjD29";
-</script>
-```
-
-Uncomment the desired widget endpoint, and add `<div id="widget-container"></div>` to where ever you'd like the widget to appear.
 
 ---------------------------
 
