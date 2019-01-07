@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -12,8 +10,7 @@
     "react-js-pagination": "^3.0.2",
     "react-loader-spinner": "^2.3.0",
     "react-scripts": "2.1.1",
-    "react-select": "^2.1.2",
-    "react-test-renderer": "^16.6.3"
+    "react-select": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,7 +29,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "puppeteer": "^1.11.0"
   },
   "homepage": "."
 }
