@@ -10,7 +10,10 @@
     "react-js-pagination": "^3.0.2",
     "react-loader-spinner": "^2.3.0",
     "react-scripts": "2.1.1",
-    "react-select": "^2.1.2"
+    "react-select": "^2.1.2",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "puppeteer": "^1.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,10 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1",
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
-    "puppeteer": "^1.11.0"
+    "gh-pages": "^2.0.1"
   },
   "homepage": "."
 }
