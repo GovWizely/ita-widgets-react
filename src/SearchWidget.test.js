@@ -20,16 +20,16 @@ test('main title is present', async () => {
 
 describe('consolidated screening list', () => {
   test('shows the title', async () => {
-    const titleElement = '#widget-container > div > div:nth-child(3) > form > h3';
+    const titleElement = '#consolidated_screening_list > form > h3';
     const titleText = await page.$eval(titleElement, e => e.innerHTML);
     await page.waitForSelector(titleElement);
     expect(titleText).toBe('Search the Consolidated Screening List:');
   });
 
   test('searching returns results', async () => {
-    const inputField = "#widget-container > div > div:nth-child(3) > form > input[type='text']";
-    const searchButton = "#widget-container > div > div:nth-child(3) > form > button";
-    const resultsHeader = "#widget-container > div > div:nth-child(3) > div.resultsList > p"; // this element will be present if successful, even if it's zero results
+    const inputField = "#consolidated_screening_list > form > input[type='text']";
+    const searchButton = "#consolidated_screening_list > form > button";
+    const resultsHeader = "#consolidated_screening_list > div.resultsList > p"; // this element will be present if successful, even if it's zero results
     await page.waitForSelector(inputField);
     await page.type(inputField, "Smith");
     await page.click(searchButton);
@@ -40,17 +40,17 @@ describe('consolidated screening list', () => {
 
 describe('trade leads', () => {
   test('shows title and a dropdown menu', async ()=> {
-    const titleElement = "#widget-container > div > div:nth-child(6) > form > h3";
-    const dropdownMenu = "#widget-container > div > div:nth-child(6) > form > div.Dropdown";
+    const titleElement = "#trade_leads > form > h3";
+    const dropdownMenu = "#trade_leads > form > div.Dropdown";
     await page.waitForSelector(dropdownMenu);
     const titleText = await page.$eval(titleElement, e => e.innerHTML);
     expect(titleText).toBe('Search Trade Leads:');
   });
 
   test('searching with a text query returns results', async () => {
-    const inputField = "#widget-container > div > div:nth-child(6) > form > input[type='text']";
-    const searchButton = "#widget-container > div > div:nth-child(6) > form > button";
-    const resultsHeader = "#widget-container > div > div:nth-child(6) > div.resultsList > p";
+    const inputField = "#trade_leads > form > input[type='text']";
+    const searchButton = "#trade_leads > form > button";
+    const resultsHeader = "#trade_leads > div.resultsList > p";
     await page.waitForSelector(inputField);
     await page.type(inputField, "computer");
     await page.click(searchButton);
@@ -61,17 +61,17 @@ describe('trade leads', () => {
 
 describe('trade events', () => {
   test('shows title and a dropdown menu', async ()=> {
-    const titleElement = "#widget-container > div > div:nth-child(9) > form > h3";
-    const dropdownMenu = "#widget-container > div > div:nth-child(9) > form > div.Dropdown";
+    const titleElement = "#trade_events > form > h3";
+    const dropdownMenu = "#trade_events > form > div.Dropdown";
     const titleText = await page.$eval(titleElement, e => e.innerHTML);    
     await page.waitForSelector(dropdownMenu);
     expect(titleText).toBe('Search Trade Events:');
   });
 
   test('searching with a text query returns results', async () => {
-    const inputField = "#widget-container > div > div:nth-child(9) > form > input[type='text']";
-    const searchButton = "#widget-container > div > div:nth-child(9) > form > button";
-    const resultsHeader = "#widget-container > div > div:nth-child(9) > div.resultsList > p";
+    const inputField = "#trade_events > form > input[type='text']";
+    const searchButton = "#trade_events > form > button";
+    const resultsHeader = "#trade_events > div.resultsList > p";
     await page.waitForSelector(inputField);
     await page.type(inputField, "computer");
     await page.click(searchButton);
@@ -82,15 +82,15 @@ describe('trade events', () => {
 
 describe('export assistance centers', () => {
   test('shows title', async ()=> {
-    const titleElement = "#widget-container > div > div:nth-child(12) > form > h3";
+    const titleElement = "#export_assistance_centers > form > h3";
     const titleText = await page.$eval(titleElement, e => e.innerHTML);    
     expect(titleText).toBe('Search Export Assistance Centers:');
   });
 
   test('searching with a zipcode returns results', async () => {
-    const inputField = "#widget-container > div > div:nth-child(12) > form > input[type='text']";
-    const searchButton = "#widget-container > div > div:nth-child(12) > form > button";
-    const resultsHeader = "#widget-container > div > div:nth-child(12) > div.resultsList > p";
+    const inputField = "#export_assistance_centers > form > input[type='text']";
+    const searchButton = "#export_assistance_centers > form > button";
+    const resultsHeader = "#export_assistance_centers > div.resultsList > p";
     await page.waitForSelector(inputField);
     await page.type(inputField, "99950");
     await page.click(searchButton);
@@ -101,17 +101,17 @@ describe('export assistance centers', () => {
 
 describe('international office locations', () => {
   test('shows title and a dropdown menu', async ()=> {
-    const titleElement = "#widget-container > div > div:nth-child(15) > form > h3";
-    const dropdownMenu = "#widget-container > div > div:nth-child(15) > form > div.Dropdown";
+    const titleElement = "#international_office_locations > form > h3";
+    const dropdownMenu = "#international_office_locations > form > div.Dropdown";
     const titleText = await page.$eval(titleElement, e => e.innerHTML);    
     await page.waitForSelector(dropdownMenu);
     expect(titleText).toBe('Search International Office Locations:');
   });
 
   test('searching with a text query returns results', async () => {
-    const inputField = "#widget-container > div > div:nth-child(15)> form > input[type='text']";
-    const searchButton = "#widget-container > div > div:nth-child(15) > form > button";
-    const resultsHeader = "#widget-container > div > div:nth-child(15) > div.resultsList > p";
+    const inputField = "#international_office_locations > form > input[type='text']";
+    const searchButton = "#international_office_locations > form > button";
+    const resultsHeader = "#international_office_locations > div.resultsList > p";
     await page.waitForSelector(inputField);
     await page.type(inputField, "Portsmouth");
     await page.click(searchButton);
