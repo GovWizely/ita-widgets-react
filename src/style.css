@@ -1,10 +1,37 @@
 :root {
   --theme-color: #3b75cd;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .root {
+    width: 750px;
+  }  
+}
+
+@media (min-width: 992) {
+  .root {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .root {
+    width: 1170px;
+  }
+}
+
+.root {
+  border: 0.75px solid lightgray;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #widget-container > .root > h1 {
-  text-align: center;
-  color: darkgray;
+  color: var(--theme-color);
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
