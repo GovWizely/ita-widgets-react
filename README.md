@@ -13,19 +13,30 @@ List of widgets:
 
 ## How to embed this widget in your page
 
-1. In `src/index.js`, uncomment line 8 (the line beginning with `ReactDOM.render...`  
+1. Download the JavaScript and CSS source files and host them on your site.
+2. Add the following to the `<head>` of your HTML document:
+    ```html
+    <link rel="stylesheet" type="text/css" href="widget.css">
+    <script type="text/javascript" src="widget.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    
+    <script>
+      var endpoints = [
+        "consolidated_screening_list",
+        "trade_leads",
+        "trade_events",
+        "export_assistance_centers",
+        "international_office_locations",
+      ]
+      var API_KEY="Your_API_key"; // get from http://api.trade.gov/
+    </script>
+    ```
+* Remove any items from the `endpoints` array that are not needed for your application, and include your API_KEY.
 
-    a. Replace the endpoint value with the desired endpoint (include quotation marks): `"consolidated_screening_list"`, `"trade_leads"`, `"trade_events"`, `"export_assistance_centers"`, `"international_office_locations"`.  
-    b. Replace `{API_KEY}` with your apiKey, keeping the brackets `{}` in place.  
-    c. Location on the page: replace `widget-container` (at the end of line 8) with the HTML ID of the div where you'd like for the widget to appear.  
-    d. Duplicate line 8 if additional widgets are needed, replacing the `endpoint`, `{API_KEY}`, and HTML ID as necessary for your application.  
+3. For each widget desired, put `<div id="consolidated_screening_list"></div>` (substitute the name of the endpoint needed as the HTML id value) to where ever you'd like the widget to appear within the `<body>` of your HTML document.
 
-2. Comment out (or delete) lines 14-45 (just beneath the comment `Unified view demonstrating all the endpoints:`)
-3. Add `<div id="widget-container"></div>` (or a div with the the ID specified above) to where ever you'd like the widget to appear within the `<body>` of your HTML document for each widget needed.
-
----------------------------
----------------------------
----------------------------
+*************************************************************************************************
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
