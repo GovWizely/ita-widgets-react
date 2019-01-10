@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/GovWizely/ita-widgets-react.svg?branch=master)](https://travis-ci.org/GovWizely/ita-widgets-react)
-
 # Search Widgets for ITA
 
 These are HTML search widgets written in React, intended to replicate the behavior of these: https://developer.trade.gov/search-widgets.html
@@ -11,19 +9,6 @@ List of widgets:
 * Export Assistance Centers
 * International Office Locations
 
-## To embed this widget in your page:
-1. In `src/index.js`, uncomment either line 7 or line 10 depending on how you'd like to pass in the endpoint and API_KEY.
-    a. To pass them in from your HTML document, uncomment line 7, and include this in the `<head>` of your HTML:
-    ```html
-    <script>
-      var endpoint="consolidated_screening_list"; /* or one of the following: "trade_leads", "trade_events", "export_assistance_centers", "international_office_locations" */
-      var API_KEY={your_api_key};
-    </script>
-    ```
-    b. To specify the endpoint and API_KEY directly in the script, uncomment line 10 and include your API_KEY and desired endpoint (endpoints include the quotation marks): "consolidated_screening_list", "trade_leads", "trade_events", "export_assistance_centers", "international_office_locations".
-
-2. Comment out or delete lines 14-45.
-3. Add `<div id="widget-container"></div>` to where ever you'd like the widget to appear within the `<body>` of your HTML document.
 
 ---------------------------
 
