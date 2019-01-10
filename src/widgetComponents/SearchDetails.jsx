@@ -8,7 +8,8 @@ class SearchDetails extends Component {
     };
   }
 
-  handleClick = () => {
+  handleClick = (e) => {
+    e.preventDefault();
     this.setState({ 
       toggleDetails: !this.state.toggleDetails 
     });

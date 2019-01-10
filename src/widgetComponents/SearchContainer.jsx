@@ -5,7 +5,7 @@ import Select from 'react-select';
 import { IoMdSearch } from 'react-icons/io'
 import Loader from 'react-loader-spinner';
 import widgetInfo from '../widgetInfo';
-import '../style.css';
+import '../ITAwidget.css';
 
 class SearchContainer extends Component {
   constructor() {
