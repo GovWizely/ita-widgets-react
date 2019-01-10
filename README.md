@@ -26,6 +26,8 @@ List of widgets:
 3. Add `<div id="widget-container"></div>` to where ever you'd like the widget to appear within the `<body>` of your HTML document.
 
 ---------------------------
+---------------------------
+---------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
