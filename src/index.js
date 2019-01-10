@@ -3,8 +3,14 @@ import ReactDOM from 'react-dom';
 import SearchContainer from './SearchWidget/SearchContainer';
 import * as serviceWorker from './serviceWorker';
 
-
+/* Uncomment the following line if you want to pass the endpoint and API_KEY from the DOM */
 // ReactDOM.render(<SearchContainer endpoint={window.endpoint} API_KEY={window.API_KEY} />, document.getElementById('widget-container'));
+
+/* Uncomment the following line to specify the endpoint and API_KEY here */
+// ReactDOM.render(<SearchContainer endpoint="consolidated_screening_list" API_KEY={API_KEY} />, document.getElementById('widget-container'));
+
+
+// Unified view demonstrating all the endpoints:
 ReactDOM.render(
   <div className="root">
     <h1>ITA Search Widgets</h1>
