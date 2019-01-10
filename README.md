@@ -20,8 +20,8 @@ List of widgets:
     c. Location on the page: replace `widget-container` (at the end of line 8) with the HTML ID of the div where you'd like for the widget to appear.  
     d. Duplicate line 8 if additional widgets are needed, replacing the `endpoint`, `{API_KEY}`, and HTML ID as necessary for your application.  
 
-2. Comment out or delete lines 14-45 (just beneath the comment `Unified view demonstrating all the endpoints:`)
-3. Add `<div id="widget-container"></div>` (or a div with the the ID specified in above) to where ever you'd like the widget to appear within the `<body>` of your HTML document for each widget needed.
+2. Comment out (or delete) lines 14-45 (just beneath the comment `Unified view demonstrating all the endpoints:`)
+3. Add `<div id="widget-container"></div>` (or a div with the the ID specified above) to where ever you'd like the widget to appear within the `<body>` of your HTML document for each widget needed.
 
 ---------------------------
 ---------------------------
