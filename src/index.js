@@ -4,7 +4,7 @@ import SearchContainer from './widgetComponents/SearchContainer';
 import * as serviceWorker from './serviceWorker';
 
 
-window.endpoints.map(endpoint => {
+window.endpoints.forEach(endpoint => {
   return ReactDOM.render(<SearchContainer endpoint={endpoint} API_KEY={window.API_KEY} />, document.getElementById(endpoint));
 })
 
