@@ -4,9 +4,9 @@ import SearchContainer from './widgetComponents/SearchContainer';
 import * as serviceWorker from './serviceWorker';
 
 
-window.endpoints.forEach(endpoint => {
-  return ReactDOM.render(<SearchContainer endpoint={endpoint} API_KEY={window.API_KEY} />, document.getElementById(endpoint));
-})
+for (const key of Object.keys(window.endpoints)) {
+  ReactDOM.render(<SearchContainer endpoint={key} API_KEY={window.API_KEY} />, document.getElementById(window.endpoints[key]));
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

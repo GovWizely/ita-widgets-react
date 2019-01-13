@@ -20,21 +20,21 @@ List of widgets:
     <script type="text/javascript" src="widget.js"></script>
     <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-    
+
     <script>
-      var endpoints = [
-        "consolidated_screening_list",
-        "trade_leads",
-        "trade_events",
-        "export_assistance_centers",
-        "international_office_locations",
-      ]
+      var endpoints = {
+        "consolidated_screening_list": "consolidated_screening_list_widget",
+        "trade_leads": "trade_leads_widget",
+        "trade_events": "trade_events_widget",
+        "export_assistance_centers": "export_assistance_centers_widget",
+        "international_office_locations": "international_office_locations_widget",
+      }
       var API_KEY="Your_API_key"; // get from http://api.trade.gov/
     </script>
     ```
-* Remove any items from the `endpoints` array that are not needed for your application, and include your API_KEY.
+* The `endpoints` object should contain a key-value pair for each endpoint name and corresponding div ID where you'd like that particular widget to appear. Remove any object/value pairs from the `endpoints` array that are not needed for your application, and include your API_KEY as a separate variable.
 
-3. For each widget desired, put `<div id="consolidated_screening_list"></div>` (substitute the name of the endpoint needed as the HTML id value) to where ever you'd like the widget to appear within the `<body>` of your HTML document.
+3. For each widget desired, put `<div id="ID_from_the_object"></div>` (substitute the ID used in the object above as the HTML id value) to where ever you'd like the widget to appear within the `<body>` of your HTML document.
 
 *************************************************************************************************
 
