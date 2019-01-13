@@ -8,7 +8,7 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json"> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -21,7 +21,6 @@
     <title>ITA Search Widget</title>
 
     <script>
-
       var endpoints = {
         "consolidated_screening_list": "consolidated_screening_list_widget",
         "trade_leads": "trade_leads_widget",
@@ -31,6 +30,9 @@
       }
       var API_KEY="ShCzzrAkXLpMTsTlhFhUjD29";
       
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        window.Explorer.renderWidget();
+      });
     </script>
     
   </head>
@@ -61,7 +63,7 @@
 
       <h2>Export Assistance Centers Widget</h2>
       <p>The <a href="https://developer.trade.gov/ita-zip-codes.html">Export Assistance Centers</a> widget provides direct access to the U.S. Export Assistance Centers (USEACs) that have been assigned to all of the 40,000+ zip codes in the United States.</p>
-      <p>The widget enables your customers to do a quick search for search for both a zip code and a USEAC. Each center has specialists on hand for each particular region.</p>
+      <p>The widget enables your customers to do a quick search for both a zip code and a USEAC. Each center has specialists on hand for each particular region.</p>
       <div id="export_assistance_centers_widget"></div>
 
       <h2>International Office Locations Widget</h2>
