@@ -39,8 +39,7 @@ Expect the suite to pass within 10 seconds (depending on network speed).
         "export_assistance_centers": "export_assistance_centers_widget_container",
         "international_office_locations": "international_office_locations_widget_container",
       };
-      API_KEY = "your_API_KEY"; // get it from http://api.trade.gov/
-      window.Explorer.renderWidget(endpoints, API_KEY);
+      window.Explorer.renderWidget(endpoints);
     });
   </script>
   ```
